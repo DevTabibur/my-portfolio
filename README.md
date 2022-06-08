@@ -3,3 +3,4 @@
 [Live Website]().
 
 ## Available Dependencies
+1. heroIcons
