@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import "./Contact.css";
-import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const form = useRef();
@@ -16,18 +17,21 @@ const Contact = () => {
         form.current,
         "rd2NWclvqL6ALdj-T"
       )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+      .then((result) => {
+        toast.success("Thanks for Emailing Me", {
+            toastId: "customId"
+          });
+        e.target.reset();
+      }, (error) => {
+        toast.error("Email was not sent!", {
+            toastId: "customId"
+          });
+    });
   };
 
   return (
     <>
+      <ToastContainer />
       <div className="contact py-16" id="contact">
         <div className="container mx-auto px-4">
           <div className="md:flex">
