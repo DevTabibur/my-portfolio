@@ -2,18 +2,23 @@
   {
     "id": 1,
     "name": "Incubator App",
+    "live" : "https://github.com/DevTabibur/incubator-app-client",
+    "server" : "https://github.com/DevTabibur/incubator-server-side",
     "image": "https://i.ibb.co/rdNZ6w0/Incubator-Dev-Tabibur.png",
     "shortDescription": "Technology:React,React Bootstrap,React Router,SASS,React,Toastify,Firebase,React Firebase hooks,React Icons,Google Font,React Spinner (npm),React Swiper (npm),React Hook Form,Modern Drawer (npm),React Query"
   },
   {
     "id": 2,
     "name": "Monota car Tools",
+    "live" : "https://github.com/DevTabibur/monota-app",
+    "server" : "https://github.com/DevTabibur/monota-app-server",
     "image": "https://i.ibb.co/WG8zDDQ/Monota-App-Car-tools.png",
     "shortDescription": "Technology:React,React Bootstrap,React Router,SASS,React,Toastify,Firebase,React Firebase hooks,React Icons,Google Font,React Spinner (npm),React Swiper (npm),React Hook Form,Modern Drawer (npm),React Query"
   },
   {
     "id": 3,
     "name": "Juristic Lawyer",
+    "live" : "https://github.com/DevTabibur/juristic-lawyer-client",
     "image": "https://i.ibb.co/PZKxk6F/Juristic-Lawyer-John-Dow.png",
     "shortDescription": "Technology:React,React Bootstrap,React Router,SASS,React,Toastify,Firebase,React Firebase hooks,React Icons,Google Font,React Spinner (npm),React Swiper (npm),React Hook Form,Modern Drawer (npm),React Query"
   }

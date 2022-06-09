@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -27,7 +28,7 @@ const Projects = () => {
 };
 
 const ShowProjects = ({ project }) => {
-  const { name, image, shortDescription } = project;
+  const { name, image, shortDescription , live, server} = project;
   return (
     <>
       <div className="card w-100 border">
@@ -38,7 +39,8 @@ const ShowProjects = ({ project }) => {
           <h2 className="card-title">{name}</h2>
           <p>{shortDescription}</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Details</button>
+            <Link to="{live}" className="btn btn-primary">Live</Link>
+            <Link to="{server}" className="btn btn-primary">Server</Link>
           </div>
         </div>
       </div>
