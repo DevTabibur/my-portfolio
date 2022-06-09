@@ -4,7 +4,7 @@ import AboutImg from "../../Assets/Images/Topu Profile transparent bg.png";
 
 const About = () => {
   return (
-    <div className="about py-10 pb-0">
+    <div className="about py-10 pb-0" id="about">
       <div className="container mx-auto px-4">
 
           <div className="md:flex items-center">

@@ -6,7 +6,7 @@ import "./Home.css";
 const Home = () => {
   return (
       <>
-        {/* <About/> */}
+        <About/>
         <Services/>
       </>
   );
