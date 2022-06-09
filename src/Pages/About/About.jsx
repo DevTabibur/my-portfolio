@@ -13,8 +13,8 @@ const About = () => {
                   <p>A Passionate MERN stack Developer,</p>
                   <span></span>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum iste aliquid iusto magnam in maxime, quod alias velit quia vitae deleniti earum repellendus voluptas assumenda ad molestias autem, eius corporis!</p>
-                  <button className="btn mr-4 mt-5">HIRE ME</button>
-                  <button className="btn mt-5">DOWNLOAD CV</button>
+                  {/* <button className="btn mr-4 mt-5">HIRE ME</button> */}
+                  <button className="btn mt-5"><a target='_blank' href="https://drive.google.com/file/d/1Pih96b70P_Lfbfnb3GnZalmzlkIEBBA9/view?usp=sharing">DOWNLOAD RESUME</a></button>
               </div>
 
               <div className="right-col flex-1 relative w-100 h-100">

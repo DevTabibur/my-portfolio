@@ -8,8 +8,8 @@ import "./Home.css";
 const Home = () => {
   return (
       <>
-        {/* <About/>
-        <Services/> */}
+        <About/>
+        <Services/>
         {/* <Portfolio/> */}
         <Contact/>
       </>

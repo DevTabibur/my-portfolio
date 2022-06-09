@@ -2,6 +2,7 @@ import React from "react";
 import "./Portfolio.css";
 
 const Portfolio = () => {
+
   // let sortBtn = document.querySelector(".filter-menu").children;
   // let sortItem = document.querySelector(".filter-item").children;
   // console.log(sortBtn, sortItem)
@@ -30,6 +31,7 @@ const Portfolio = () => {
   //     }
   //   });
   // }
+
   return (
     <>
       <div className="container mx-auto px-4 text-center py-10">

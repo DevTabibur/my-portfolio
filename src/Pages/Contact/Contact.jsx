@@ -1,11 +1,15 @@
 import React from "react";
 import "./Contact.css";
+import { useForm } from "react-hook-form";
 
 const Contact = () => {
+    const {register} = useForm();
+
   return (
     <div className="contact py-16" id="contact">
       <div className="container mx-auto px-4">
         <div className="md:flex">
+
           <div className="left-col flex-1">
             <h2 className="text-2xl font-semibold">Contact Info</h2>
             <ul>
@@ -76,7 +80,21 @@ const Contact = () => {
             </ul>
           </div>
 
-          <div className="right-col flex-1">22</div>
+          <div className="right-col flex-1">
+              <div className="react-hook-form">
+                  <form >
+                      <label htmlFor="FirstName">Name</label>
+                      <input type="text" placeholder="Name"/>
+                      <br />
+                      <label htmlFor="email">Email</label>
+                      <input type="email" placeholder="Email" />
+                      <br />
+                      <label htmlFor="message">Message</label>
+                      <input type="text" placeholder="write your message" />
+                  </form>
+              </div>
+          </div>
+
         </div>
       </div>
     </div>
