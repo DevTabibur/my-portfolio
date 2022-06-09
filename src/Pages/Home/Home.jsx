@@ -1,5 +1,6 @@
 import React from "react";
 import About from "../About/About";
+import Banner from "../Banner/Banner";
 import Contact from "../Contact/Contact";
 import Portfolio from "../Portfolio/Portfolio";
 import Projects from "../Projects/Projects";
@@ -9,11 +10,12 @@ import "./Home.css";
 const Home = () => {
   return (
       <>
-        <About/>
-        <Services/>
+      <Banner/>
+        {/* <About/>
+        <Services/> */}
         {/* <Portfolio/> */}
-        <Projects/>
-        <Contact/>
+        {/* <Projects/>
+        <Contact/> */}
       </>
   );
 };
