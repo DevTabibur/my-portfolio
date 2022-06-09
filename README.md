@@ -6,3 +6,4 @@
 1. heroIcons
 2. npm i react-router-hash-link (for navigating within the one page)
 3. npm install react-hook-form
+4. npm install @emailjs/browser --save
