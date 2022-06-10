@@ -6,7 +6,7 @@ const HeaderNav = () => {
   const menu = [
     <>
       <li className="mr-4">
-        <Link to="#home" smooth>
+        <Link to="/" smooth>
           HOME
         </Link>
       </li>
@@ -27,14 +27,13 @@ const HeaderNav = () => {
         <Link to="#testimonial">TESTIMONIAL</Link>
       </li>
       <li className="mr-4">
-        <Link to="#blog">BLOG</Link>
+        <Link to="/blogs">BLOG</Link>
       </li>
       <li>
         <Link to="#contact">CONTACT</Link>
       </li>
     </>,
   ];
-  // bg-gradient-to-r from-blue-500 to-transparent
   return (
     <div className="navbar-parent">
       <div className="container mx-auto px-4">

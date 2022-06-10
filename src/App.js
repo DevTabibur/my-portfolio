@@ -1,4 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom";
+import Blog from "./Pages/Blog/Blog";
+import Details from "./Pages/Details/Details";
 import Home from "./Pages/Home/Home";
 import Footer from "./Pages/Shared/Footer/Footer";
 import HeaderNav from "./Pages/Shared/HeaderNav/HeaderNav";
@@ -10,7 +12,11 @@ function App() {
   return (
     <>
       <HeaderNav />
-      <Home />
+      <Routes>
+      <Route path="/" element={<Home/>}></Route>
+        <Route path="/details/:id" element={<Details/>}></Route>
+        <Route path="/blogs" element={<Blog/>}></Route>
+      </Routes>
       <Footer />
     </>
   );
