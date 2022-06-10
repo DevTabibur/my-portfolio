@@ -9,7 +9,7 @@ const Services = () => {
           <h2 className="text-2xl font-bold mb-3 font-serif">
             What I'm Doing?
           </h2>
-          <p className="font-serif">Lorem ipsum dolor sit amet.</p>
+          <p className="font-serif">Find what am I doing?.</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-4 py-10">
@@ -35,8 +35,7 @@ const Services = () => {
                 Web Design
               </h3>
               <p className="font-serif">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex,
-                itaque.
+                I can design pixel perfect template with vanilla css, tailwind and bootstrap
               </p>
             </div>
           </div>
@@ -63,8 +62,7 @@ const Services = () => {
                 Development
               </h3>
               <p className="font-serif">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex,
-                itaque.
+                I can develop a site with MERN stack
               </p>
             </div>
           </div>
@@ -91,8 +89,7 @@ const Services = () => {
                 Bug Fixing
               </h3>
               <p className="font-serif">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex,
-                itaque.
+                Bug fixing is a next level experienced work. Error solving is my passion.
               </p>
             </div>
           </div>
@@ -119,8 +116,7 @@ const Services = () => {
                 Support (24/7)
               </h3>
               <p className="font-serif">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex,
-                itaque.
+                Giving my client 24/7 support in my best.
               </p>
             </div>
           </div>
@@ -147,8 +143,7 @@ const Services = () => {
                 Backend Handle
               </h3>
               <p className="font-serif">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex,
-                itaque.
+                backend develop with Node, express and mongo.
               </p>
             </div>
           </div>
@@ -175,8 +170,7 @@ const Services = () => {
                 Strategy
               </h3>
               <p className="font-serif">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex,
-                itaque.
+                MERN is my strategy
               </p>
             </div>
           </div>

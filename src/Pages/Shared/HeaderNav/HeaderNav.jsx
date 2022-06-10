@@ -20,12 +20,12 @@ const HeaderNav = () => {
           SERVICE
         </Link>
       </li>
-      <li className="mr-4">
+      {/* <li className="mr-4">
         <Link to="#portfolio">PORTFOLIO</Link>
       </li>
       <li className="mr-4">
         <Link to="#testimonial">TESTIMONIAL</Link>
-      </li>
+      </li> */}
       <li className="mr-4">
         <Link to="/blogs">BLOG</Link>
       </li>
