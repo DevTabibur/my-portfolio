@@ -34,11 +34,11 @@ const HeaderNav = () => {
       </li>
     </>,
   ];
-
+  // bg-gradient-to-r from-blue-500 to-transparent
   return (
-    <div className="navbar-parent bg-gradient-to-r from-blue-500 to-transparent">
+    <div className="navbar-parent">
       <div className="container mx-auto px-4">
-        <div className="navbar">
+        <div className="navbar ">
           <div className="navbar-start">
             <div className="dropdown">
               <label tabindex="0" className="btn btn-ghost lg:hidden">
