@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useProjects from "../../Hooks/useProjects";
 
 const Projects = () => {
@@ -20,7 +20,7 @@ const Projects = () => {
           </div>
 
           <div className="flex flex-wrap -m-4">
-            {projects.map((project) => (
+            {projects?.map((project) => (
               <ShowProjects key={project.id} project={project} />
             ))}
           </div>
@@ -32,10 +32,13 @@ const Projects = () => {
 
 const ShowProjects = ({ project }) => {
   const { id, name, image, shortDescription, live, server } = project;
-console.log('id', id);
+  const navigate = useNavigate();
+
 const handleID = (id) =>{
-  
+  navigate(`/${id}`)
 }
+
+
   return (
     <>
       <div className="lg:w-1/3 sm:w-1/2 p-4 shadow">

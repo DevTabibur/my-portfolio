@@ -7,6 +7,7 @@ const useProjects = () => {
     fetch("services.json")
       .then((res) => res.json())
       .then((data) => {
+        // console.log(data);
         setProjects(data);
       });
   }, []);

@@ -5,6 +5,7 @@ const useSingleProject = (id) => {
     const [singleProject, setSingleProject] = useState({});
     useEffect(() => {
         const url = `services.json/details/${id}`;
+        console.log(url, 'url')
         fetch(url)
           .then((res) => res.json())
           .then((data) => setSingleProject(data));

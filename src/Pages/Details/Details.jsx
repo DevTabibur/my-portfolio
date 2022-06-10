@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import useProjects from "../../Hooks/useProjects";
-import useSingleProject from "../../Hooks/useSingleProject";
 import "./Details.css";
 // import Monota1 from '../../Assets/Images/monota1.png';
 // import Monota2 from '../../Assets/Images/monota2.png';
@@ -14,11 +14,29 @@ import "./Details.css";
 // import Juristic2 from '../../Assets/Images/juristic 2.png';
 // import Juristic3 from '../../Assets/Images/juristic 3.png';
 
-
 const Details = () => {
   const { id } = useParams();
-  const [singleProject] = useSingleProject(id);
-console.log('singleProject', singleProject);
+
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    fetch("services.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setProjects(data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  let singleProject = {};
+
+  projects?.map((project) => {
+    if (project.id == id) {
+      singleProject = project;
+    }
+  });
+
+  const { name, image, shortDescription, live, client, server, image2, image3 } = singleProject;
   return (
     <>
       <div className="container mx-auto px-4 py-20">
@@ -30,31 +48,52 @@ console.log('singleProject', singleProject);
                   <img
                     alt="content"
                     className="object-cover object-center h-full w-full"
-                    src="https://dummyimage.com/1205x505"
+                    src={image}
                   />
                 </div>
                 <h2 className="text-xl font-medium title-font text-gray-900 mt-5">
-                  The 400 Blows
+                  {name}
                 </h2>
                 <p className="text-base leading-relaxed mt-2">
-                  Swag shoivdigoitch literally meditation subway tile tumblr
-                  cold-pressed. Gastropub street art beard dreamcatcher neutra,
-                  ethical XOXO lumbersexual.
+                  {shortDescription}
                 </p>
-                <a className="text-indigo-500 inline-flex items-center mt-3">
-                  Learn More
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    className="w-4 h-4 ml-2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
+              </div>
+
+              <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
+                <div className="rounded-lg h-64 overflow-hidden">
+                  <img
+                    alt="content"
+                    className="object-cover object-center h-full w-full"
+                    src={image2}
+                  />
+                </div>
+                <h2 className="text-xl font-medium title-font text-gray-900 mt-5">
+                  {name}
+                </h2>
+                <p className="text-base leading-relaxed mt-2">
+                  {shortDescription}
+                </p>
+              </div>
+
+              <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
+                <div className="rounded-lg h-64 overflow-hidden">
+                  <img
+                    alt="content"
+                    className="object-cover object-center h-full w-full"
+                    src={image3}
+                  />
+                </div>
+                <h2 className="text-xl font-medium title-font text-gray-900 mt-5">
+                  {name}
+                </h2>
+                <p className="text-base leading-relaxed mt-2">
+                  {shortDescription}
+                </p>
+              </div>
+              <div className="buttons mx-auto text-center mt-10">
+              <button className="btn mr-4"> <a href={live} target="_blank">Live Site</a> </button>
+              <button className="btn mr-4"> <a href={client} target="_blank">Client Site</a> </button>
+              <button className="btn mr-4"> <a href={server} target="_blank">Server Site</a> </button>
               </div>
             </div>
           </div>
