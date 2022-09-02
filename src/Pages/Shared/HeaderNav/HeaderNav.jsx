@@ -1,81 +1,160 @@
-import React from "react";
+import React, { useState } from "react";
 import "./HeaderNav.css";
 import { HashLink as Link } from "react-router-hash-link";
+import { NavLink } from "react-router-dom";
 
-const HeaderNav = () => {
-  const menu = [
+const HeaderNav = ({ children }) => {
+  // for theme toggle
+  const [dark, setDark] = useState(false);
+  const menu = (
     <>
-      <li className="mr-4">
-        <Link to="/" smooth>
+      <li className="mx-2">
+        <NavLink className="rounded" to="/">
           HOME
-        </Link>
+        </NavLink>
       </li>
-      <li className="mr-4">
-        <Link to="#about" smooth>
+      <li className="mx-2">
+        <NavLink className="rounded" to="/about">
           ABOUT
-        </Link>
+        </NavLink>
       </li>
-      <li className="mr-4">
-        <Link to="#services" smooth>
+      <li className="mx-2">
+        <NavLink className="rounded" to="/services">
           SERVICE
-        </Link>
+        </NavLink>
       </li>
-      {/* <li className="mr-4">
-        <Link to="#portfolio">PORTFOLIO</Link>
+      {/* <li className="mx-2">
+        <NavLink className="rounded" to="#portfolio">PORTFOLIO</NavLink>
       </li>
-      <li className="mr-4">
-        <Link to="#testimonial">TESTIMONIAL</Link>
+      <li className="mx-2">
+        <NavLink className="rounded" to="#testimonial">TESTIMONIAL</NavLink>
       </li> */}
-      <li className="mr-4">
-        <Link to="/blogs">BLOG</Link>
+      <li className="mx-2">
+        <NavLink className="rounded" to="/blogs">
+          BLOG
+        </NavLink>
       </li>
-      <li>
-        <Link to="#contact">CONTACT</Link>
+      <li className="mx-2">
+        <NavLink className="rounded" to="/contact">
+          CONTACT
+        </NavLink>
       </li>
-    </>,
-  ];
+    </>
+  );
+
   return (
-    <div className="navbar-parent">
-      <div className="container mx-auto px-4">
-        <div className="navbar ">
+    <div className="drawer  drawer-end" data-theme={dark ? "dark" : "light"}>
+      <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
+      <div className="drawer-content flex flex-col">
+        {/* <!-- Navbar --> */}
+
+        <div className="w-full navbar bg-accent text-white lg:px-20">
           <div className="navbar-start">
-            <div className="dropdown">
-              <label tabindex="0" className="btn btn-ghost lg:hidden">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h8m-8 6h16"
-                  />
-                </svg>
-              </label>
-              <ul
-                tabindex="0"
-                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-              >
-                {menu}
-              </ul>
-            </div>
-            <Link to="/" className="btn btn-ghost normal-case text-xl">
-              TRT
-            </Link>
+            <div className="flex-1 px-2 mx-2 text-xl font-bold">TRT.</div>
           </div>
-          <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal p-0">{menu}</ul>
+
+          <div className="flex-none hidden lg:block navbar-center">
+            <ul className="menu menu-horizontal mx-10">
+              {/* <!-- Navbar menu content here --> */}
+              {menu}
+            </ul>
           </div>
           <div className="navbar-end">
-            <a className="btn">Login</a>
+            <div className="flex-none lg:hidden">
+              <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  className="inline-block w-6 h-6 stroke-current"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </label>
+            </div>
+
+            {/* swap */}
+            <div className=" hidden lg:block">
+              <label className="swap swap-rotate">
+                <input type="checkbox" onClick={() => setDark(!dark)} />
+
+                <svg
+                  className="swap-on fill-current w-10 h-10"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+                </svg>
+
+                <svg
+                  className="swap-off fill-current w-10 h-10"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+                </svg>
+              </label>
+            </div>
+
+            {/* Login */}
+            <div className=" hidden lg:block ml-4">
+            <div className=" px-2 mx-2  font-bold">LOGIN</div>
+              {/* <label className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  <img src="https://placeimg.com/80/80/people" />
+                </div>
+              </label> */}
+            </div>
           </div>
         </div>
+
+        {/* <!-- Page content here --> */}
+        {children}
       </div>
+      <div className="drawer-side">
+        <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
+        <ul className="menu p-4 overflow-y-auto w-80 bg-base-100">
+          {/* <!-- Sidebar content here --> */}
+          {menu}
+          {/* swap */}
+          <li>
+          <label className="swap swap-rotate justify-start">
+            <input type="checkbox" onClick={() => setDark(!dark)} />
+
+            <svg
+              className="swap-on fill-current w-10 h-10"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+            </svg>
+
+            <svg
+              className="swap-off fill-current w-10 h-10"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+            </svg>
+          </label>
+          </li>
+
+          {/* Login */}
+          <div className="dropdown dropdown-end">
+            <label className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <img src="https://placeimg.com/80/80/people" />
+              </div>
+            </label>
+          </div>
+        </ul>
       </div>
+    </div>
   );
 };
 

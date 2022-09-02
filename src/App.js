@@ -11,13 +11,14 @@ import HeaderNav from "./Pages/Shared/HeaderNav/HeaderNav";
 function App() {
   return (
     <>
-      <HeaderNav />
-      <Routes>
+      <HeaderNav>
+      {/* <Routes>
       <Route path="/" element={<Home/>}></Route>
         <Route path="/:id" element={<Details/>}></Route>
         <Route path="/blogs" element={<Blog/>}></Route>
-      </Routes>
-      <Footer />
+      </Routes> */}
+      {/* <Footer /> */}
+      </HeaderNav>
     </>
   );
 }

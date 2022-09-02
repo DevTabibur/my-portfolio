@@ -1,46 +1,38 @@
 import React from "react";
 import "./Banner.css";
 import BannerImg from "../../Assets/Images/Untitled design (1).png";
-
-const Banner = () => {
-  //     document.querySelector(document).ready(function() {
-  //         // Transition effect for navbar
-  //         document.querySelector(window).scroll(function() {
-  //           // checks if window is scrolled more than 500px, adds/removes solid class
-  //           if(document.querySelector(this).scrollTop > 500) {
-  //               document.querySelector('.navbar').classList.add('solid');
-  //           } else {
-  //               document.querySelector('.navbar').classList.remove('solid');
-  //           }
-  //         });
-  // });
-
-  // $(document).ready(function() {
-  //     // Transition effect for navbar
-  //     $(window).scroll(function() {
-  //       // checks if window is scrolled more than 500px, adds/removes solid class
-  //       if($(this).scrollTop() > 500) {
-  //           $('.navbar').addClass('solid');
-  //       } else {
-  //           $('.navbar').removeClass('solid');
-  //       }
-  //     });
-  // });
+import AboutImg from "../../Assets/Images/Topu Profile transparent bg.png";
+const HeroBanner = () => {
 
   return (
-    <div className="banner relative">
-      <img src={BannerImg} alt="BannerImg" />
-      {/* <div className="container relative mx-auto px-4"> */}
-        <div className="banner-info absolute p-2.5 bottom-1 left-50  bg-blue-400 text-white  ">
-          <h2 className="text-2xl">HELLO</h2>
-          <h1 className="text-3xl">I am Tabibur Rahman</h1>
-          <h3 className="text-xl">
-            A Passionate MERN Stack Developer, WordPress Expert
-          </h3>
+    <div className="banner py-2 bg-base-100">
+      {/* <div className="container mx-auto px-4">
+        <div className="md:flex flex-row relative">
+
+          <div className="basis-1/2 relative">111</div>
+
+          <div className="basis-1/2 relative">222
+            <div className="hero-portrait relative">
+              <div className="image relative bg-red-300">
+                <img className="relative " src={AboutImg} alt="hero"/>
+
+                <div className="image-half-round-shape">shape</div>
+
+                <div className="social-link">
+                  <a>FB</a>
+                  <a>YT</a>
+                  <a>TT</a>
+                  <a>DD</a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
         </div>
-      </div>
-    // </div>
+      </div> */}
+    </div>
   );
 };
 
-export default Banner;
+export default HeroBanner;
