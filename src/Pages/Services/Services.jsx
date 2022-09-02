@@ -2,8 +2,9 @@ import React from "react";
 import "./Services.css";
 
 const Services = () => {
+  
   return (
-    <div className="services bg-gray-50" id="services">
+    <div className="services bg-red-300" id="services">
       <div className="container mx-auto px-4">
         <div className="section-title mx-auto text-center py-10">
           <h2 className="text-2xl font-bold mb-3 font-serif">
@@ -12,7 +13,7 @@ const Services = () => {
           <p className="font-serif">Find what am I doing?.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-4 py-10">
+        {/* <div className="grid md:grid-cols-3 gap-4 py-10">
           <div className="box text-center bg-white p-12">
             <div className="icon">
               <svg
@@ -172,6 +173,28 @@ const Services = () => {
               <p className="font-serif">
                 MERN is my strategy
               </p>
+            </div>
+          </div>
+        </div> */}
+
+        <div className="flex md:flex-row py-10">
+          <div className="basis-1/2">
+            <h1 className="lg:text-9xl font-semibold font-sans mb-8">
+              My Special Skill <br></br> Field Here.
+            </h1>
+            <button class="btn btn-accent">Get Resume</button>
+          </div>
+
+          <div className="basis-1/2">
+            <div class="form-control w-full max-w-xs">
+              <label class="label">
+                <span class="label-text">HTML</span>
+                <progress class="progress progress-accent w-56" value="10" max="100"></progress>
+{/* <progress class="progress progress-accent w-56" value="10" max="100"></progress>
+<progress class="progress progress-accent w-56" value="40" max="100"></progress>
+<progress class="progress progress-accent w-56" value="70" max="100"></progress>
+<progress class="progress progress-accent w-56" value="100" max="100"></progress> */}
+              </label>
             </div>
           </div>
         </div>
