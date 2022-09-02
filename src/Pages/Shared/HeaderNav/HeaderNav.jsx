@@ -43,7 +43,7 @@ const HeaderNav = ({ children }) => {
   );
 
   return (
-    <div className="drawer  drawer-end" data-theme={dark ? "dark" : "light"}>
+    <div className="drawer drawer-end" data-theme={dark ? "dark" : "light"}>
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* <!-- Navbar --> */}

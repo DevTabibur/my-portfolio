@@ -4,7 +4,7 @@ import BannerImg from "../../Assets/Images/Untitled design (1).png";
 import AboutImg from "../../Assets/Images/Topu Profile transparent bg.png";
 const HeroBanner = () => {
   return (
-    <div className="bg-gray-700">
+    <div className="bg-base-100">
       <div className="container mx-auto px-4">
         <div className="hero-content flex-col lg:flex-row-reverse py-0 my-0">
           <div className=" image relative w-full">
