@@ -11,8 +11,9 @@ const Home = () => {
   return (
       <>
       <HeroBanner/>
+      <Services/>
+
         {/* <About/>
-        <Services/>
         <Portfolio/>
         <Projects/>
         <Contact/> */}
