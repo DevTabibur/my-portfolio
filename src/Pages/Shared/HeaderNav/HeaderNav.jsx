@@ -48,7 +48,7 @@ const HeaderNav = ({ children }) => {
       <div className="drawer-content flex flex-col">
         {/* <!-- Navbar --> */}
 
-        <div className="w-full navbar bg-accent text-white lg:px-20">
+        <div className="w-full navbar bg-accent  text-white lg:px-20">
           <div className="navbar-start">
             <div className="flex-1 px-2 mx-2 text-xl font-bold">TRT.</div>
           </div>
@@ -118,7 +118,7 @@ const HeaderNav = ({ children }) => {
       </div>
       <div className="drawer-side">
         <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
-        <ul className="menu p-4 overflow-y-auto w-80 bg-base-100">
+        <ul className="menu p-4 overflow-y-auto w-80 ">
           {/* <!-- Sidebar content here --> */}
           {menu}
           {/* swap */}

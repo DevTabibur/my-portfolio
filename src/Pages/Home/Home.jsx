@@ -12,9 +12,9 @@ const Home = () => {
       <>
       <HeroBanner/>
         {/* <About/>
-        <Services/> */}
-        {/* <Portfolio/> */}
-        {/* <Projects/>
+        <Services/>
+        <Portfolio/>
+        <Projects/>
         <Contact/> */}
       </>
   );
