@@ -1,90 +1,197 @@
-import React from "react";
+import React, { Component } from "react";
+import { ReactDOM } from "react";
 import "./Portfolio.css";
+import { userNavigate } from "react-router-dom";
 
-const Portfolio = () => {
+// const Portfolio = () => {
+//   return (
+//     <div>Portfolio</div>
+//   )
+// }
 
-  // let sortBtn = document.querySelector(".filter-menu").children;
-  // let sortItem = document.querySelector(".filter-item").children;
-  // console.log(sortBtn, sortItem)
+const imgs = [
+  {
+    author: "The Lazy Artist Gallery",
+    tag: "People",
+    src: "https://github.com/OlgaKoplik/CodePen/blob/master/filterGallery/1.jpg?raw=true",
+  },
+  {
+    author: "Daria Shevtsova",
+    tag: "Food",
+    src: "https://github.com/OlgaKoplik/CodePen/blob/master/filterGallery/2.jpg?raw=true",
+  },
+  {
+    author: "Kasuma",
+    tag: "Animals",
+    src: "https://github.com/OlgaKoplik/CodePen/blob/master/filterGallery/3.jpg?raw=true",
+  },
+  {
+    author: "Dominika Roseclay",
+    tag: "Plants",
+    src: "https://github.com/OlgaKoplik/CodePen/blob/master/filterGallery/4.jpg?raw=true",
+  },
+  {
+    author: "Scott Webb",
+    tag: "Plants",
+    src: "https://github.com/OlgaKoplik/CodePen/blob/master/filterGallery/5.jpg?raw=true",
+  },
+  {
+    author: "Jeffrey Czum",
+    tag: "People",
+    src: "https://github.com/OlgaKoplik/CodePen/blob/master/filterGallery/6.jpg?raw=true",
+  },
+  {
+    author: "Dominika Roseclay",
+    tag: "Food",
+    src: "https://github.com/OlgaKoplik/CodePen/blob/master/filterGallery/7.jpg?raw=true",
+  },
+  {
+    author: "Valeria Boltneva",
+    tag: "Animals",
+    src: "https://github.com/OlgaKoplik/CodePen/blob/master/filterGallery/8.jpg?raw=true",
+  },
+];
 
-  // for (let i = 0; i < sortBtn.length; i++) {
-  //   sortBtn[i].addEventListener("click", function () {
-  //     for (let j = 0; j < sortBtn.length; j++) {
-  //       sortBtn[j].classList.remove("current");
-  //     }
+const filters = [
+  { name: "People", status: false },
+  { name: "Animals", status: false },
+  { name: "Plants", status: false },
+  { name: "Food", status: false },
+];
 
-  //     this.classList.add("current");
+const Filters = ({ onClickAll, all, onClick, filters }) => (
+  <form className="menu-form">
+    <ul>
+      <li onClick={onClickAll}>
+        <input type="checkbox" checked={all} />
+        <label htmlFor="all">All</label>
+      </li>
+      {filters.map((filter, i) => (
+        <li key={i} data-index={i} onClick={onClick}>
+          <input id={filter.name} type="checkbox" checked={filter.status} />
+          <label htmlFor={filter.name}>{filter.name}</label>
+        </li>
+      ))}
+    </ul>
+  </form>
+);
 
-  //     let targetData = this.getAttribute("data-target");
-
-  //     for (let k = 0; k < sortItem.length; k++) {
-  //       sortItem[k].classList.remove("active");
-  //       sortItem[k].classList.add("delete");
-
-  //       if (
-  //         sortItem[k].getAttribute("data-item") === targetData ||
-  //         targetData === "all"
-  //       ) {
-  //         sortItem[k].classList.remove("delete");
-  //         sortItem[k].classList.add("active");
-  //       }
-  //     }
-  //   });
-  // }
-
-  return (
-    <>
-      <div className="container mx-auto px-4 text-center py-10">
-        {/* <div className="container"> */}
-          <ul className="filter-menu">
-            <li data-target="all">All</li>
-            <li data-target="male">Male</li>
-            <li data-target="female">Female</li>
-            <li data-target="kid">Kid</li>
-          </ul>
-
-          <ul className="filter-item">
-            <li data-item="male">
-              <img
-                src="https://res.cloudinary.com/seidensticker/image/upload/ar_1:1,c_mfit,w_900,f_auto/production/product/1227/63/1227-63-image-3-5ea8c16216339.jpg"
-                alt=""
-              />
-            </li>
-            <li data-item="male">
-              <img
-                src="https://media.boohoo.com/i/boohoo/mzz70546_white_xl?$product_image_main_mobile$"
-                alt=""
-              />
-            </li>
-            <li data-item="female">
-              <img
-                src="https://i.pinimg.com/originals/8e/dc/0b/8edc0b484b3c9098181f72746653f63c.jpg"
-                alt=""
-              />
-            </li>
-            <li data-item="female">
-              <img
-                src="https://i.pinimg.com/originals/a3/dd/2c/a3dd2c9d7028a36f89291ac308497cca.jpg"
-                alt=""
-              />
-            </li>
-            <li data-item="kid">
-              <img
-                src="https://media.kasperskydaily.com/wp-content/uploads/sites/36/2020/02/11224850/smartphone-for-kids-featured.jpg"
-                alt=""
-              />
-            </li>
-            <li data-item="kid">
-              <img
-                src="https://images.ctfassets.net/cnu0m8re1exe/2elnw1rJ0HL8QqPOd3OtH5/c5b25256f2f8c7ba398ef21a2ca6504d/Kid-Thinking.jpg?w=650&h=433&fit=fill"
-                alt=""
-              />
-            </li>
-          </ul>
+const Cards = ({ imgs }) => (
+  <>
+    {imgs.map((img, i) => (
+      <div className="card w-full bg-accent shadow">
+        <figure className="rounded-lg">
+          <img className="" src={img.src} alt="Shoes" />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">{img.author}</h2>
+          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <div className="card-actions justify-end">
+            <button className="btn btn-primary">Buy Now</button>
+          </div>
         </div>
-      {/* </div> */}
+      </div>
+    ))}
     </>
-  );
-};
+);
+
+class Portfolio extends Component {
+  state = {
+    imgs,
+    filters,
+    all: true,
+  };
+
+  setFilter = (e) => {
+    e.preventDefault();
+    const { filters, all } = this.state;
+    const { index } = e.currentTarget.dataset;
+
+    filters[index].status = !filters[index].status;
+    this.setState({
+      filters,
+    });
+
+    this.updateFilters();
+    this.updateImgs();
+  };
+
+  setAll = () => {
+    const { filters } = this.state;
+
+    filters.forEach((filter) => {
+      filter.status = false;
+    });
+
+    this.setState({
+      all: true,
+      filters,
+    });
+  };
+
+  updateFilters() {
+    const allFiltersTrue = filters.every((filter) => filter.status === true);
+    const allFiltersFalse = filters.every((filter) => filter.status === false);
+
+    if (allFiltersTrue || allFiltersFalse) {
+      this.setAll();
+    } else {
+      this.setState({
+        all: false,
+      });
+    }
+  }
+
+  updateImgs() {
+    const { filters, all } = this.state;
+    let newImgs = [];
+    let a = 0;
+
+    imgs.forEach((img, imgKey) => {
+      filters.forEach((filter, filterKey) => {
+        if (img.tag == filter.name && filter.status == true) {
+          newImgs[a] = img;
+          a++;
+        }
+      });
+    });
+
+    this.setState({
+      imgs: newImgs,
+    });
+  }
+
+  render() {
+    const { filters, all } = this.state;
+    return (
+      <div>
+      <div className="container mx-auto px-4">
+        <h2 className="text-center py-6 text-2xl font-semibold pb-0">Project Show case</h2>
+      </div>
+        <Filters
+          onClickAll={this.setAll}
+          all={all}
+          onClick={this.setFilter}
+          filters={filters}
+        />
+
+        {all ? (
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-4 gap-4">
+              <Cards imgs={imgs} />
+            </div>
+          </div>
+        ) : (
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-4 gap-4">
+              <Cards imgs={this.state.imgs} />
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+}
+// ReactDOM.render(<App/>, document.getElementById('root'));
 
 export default Portfolio;

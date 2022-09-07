@@ -15,7 +15,7 @@ const NotFound = () => {
             alt="not found"
           />
           <div>
-            <p className="py-6 text-secondary">
+            <p className="py-6 text-white">
               Opps! This page is'nt available anymore
             </p>
             <button onClick={()=>navigate(-1)} className="btn btn-accent w-full">Go Back</button>

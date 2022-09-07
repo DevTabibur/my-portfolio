@@ -47,7 +47,7 @@ const Contact = () => {
   return (
     <>
       <ToastContainer />
-      <div className="contact bg-base-100" id="contact">
+      <div className="contact bg-base-100 py-12" id="contact">
       <div className="title pb-20 py-8 text-center">
           <h1 className="text-2xl font-semibold">Contact Me</h1>
         </div>
@@ -60,9 +60,9 @@ const Contact = () => {
                   className="w-full rounded-lg"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117776.87638476474!2d88.97188760510043!3d22.708631113852416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ff5c251bcf507f%3A0x3280b3e685f48d5d!2sSatkhira%20Sadar%20Upazila!5e0!3m2!1sen!2sbd!4v1662148027805!5m2!1sen!2sbd"
                   height="300"
-                  allowfullscreen=""
+                  allowFullScreen=""
                   loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
+                  referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
               <div className="md:flex flex-row gap-5 w-full mt-10">

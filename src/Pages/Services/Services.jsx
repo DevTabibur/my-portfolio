@@ -2,7 +2,7 @@ import React from "react";
 import "./Services.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode , faDatabase, faBrain, faServer, faBugSlash } from "@fortawesome/free-solid-svg-icons";
-import ProgressComponent from "./ProgressBar";
+import ProgressComponent from "../Shared/ProgressBar";
 
 
 const Services = () => {

@@ -45,8 +45,19 @@ const HeroBanner = () => {
           </div>
           <div>
             <h1 className="text-5xl font-bold">Hello! I'm Tabibur Rahman</h1>
-            <p className="py-6">A Passionate MERN and full-stack developer.</p>
-            <button className="btn btn-accent">Download Resume</button>
+            <p className="py-6">
+              Hi, I'm a dedicated and passionate MERN Developer. I'm a quick
+              learner and eager to learn new technologies to expand my
+              knowledge. I want to work with a renowned team or company to build
+              up my career as a Software Engineer. I want to see myself as a
+              Senior MERN Developer in the next 5 years.
+            </p>
+            <button className="btn btn-accent" ><a
+                target="_blank"
+                href="https://drive.google.com/file/d/1Pih96b70P_Lfbfnb3GnZalmzlkIEBBA9/view?usp=sharing"
+              >
+                DOWNLOAD RESUME
+              </a></button>
           </div>
         </div>
       </div>

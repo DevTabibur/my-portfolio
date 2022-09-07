@@ -15,15 +15,14 @@ function App() {
   return (
     <>
       <HeaderNav>
-
         <Routes>
-          {publicRoutes.map(({ path,  Component }, index) => (
+          {publicRoutes.map(({ path, Component }, index) => (
             <Route key={index} path={path} element={<Component />} />
           ))}
-          <Route path="*" element={<NotFound/>}></Route>
+          <Route path="*" element={<NotFound />}></Route>
         </Routes>
 
-
+        <Footer />
       </HeaderNav>
     </>
   );

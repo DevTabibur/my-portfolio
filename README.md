@@ -8,3 +8,4 @@
 3. npm install react-hook-form
 4. npm install @emailjs/browser --save
 5. npm install --save react-toastify
+6. npm i react-countup
