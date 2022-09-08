@@ -4,14 +4,14 @@ const useProjects = () => {
     const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("services.json")
+    const url = `http://localhost:5000/projects`;
+    fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
         setProjects(data);
       });
   }, []);
-  return [projects, setProjects]
+  return [projects]
 }
 
 export default useProjects;

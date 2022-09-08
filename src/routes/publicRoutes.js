@@ -7,10 +7,10 @@ import Services from '../Pages/Services/Services';
 
 const publicRoutes = [
   {path:"/", name:"Home", Component:Home},
-  {path:"/about", name:"About", Component:About},
-  {path:"/contact", name:"Contact", Component:Contact},
-  {path:"/services", name:"Services", Component:Services},
-  {path:"/blogs", name:"Blogs", Component:Blog}
+  {path:"#about", name:"About", Component:About},
+  {path:"#contact", name:"Contact", Component:Contact},
+  {path:"#services", name:"Services", Component:Services},
+  {path:"#blogs", name:"Blogs", Component:Blog}
 ]
 
 export default publicRoutes

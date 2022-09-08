@@ -3,21 +3,21 @@ import About from "../About/About";
 import HeroBanner from "../Banner/Banner";
 import Contact from "../Contact/Contact";
 import Filters from "../Portfolio/Portfolio";
-import Portfolio  from "../Portfolio/Portfolio";
-import Projects from "../Projects/Projects";
+import Portfolio from "../Portfolio/Portfolio";
 import Services from "../Services/Services";
-import Counter from "../Shared/Counter";
+import Scroll from "../Shared/ScrollToTop/Scroll";
 import "./Home.css";
 
 const Home = () => {
   return (
-      <>
-      <HeroBanner/>
-      <Services/>
-      <Portfolio/>
+    <>
+      <HeroBanner />
+      <Services />
+      <Portfolio />
 
-        <Contact/>
-      </>
+      <Contact />
+      <Scroll />
+    </>
   );
 };
 

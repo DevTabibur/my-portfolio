@@ -8,4 +8,7 @@
 3. npm install react-hook-form
 4. npm install @emailjs/browser --save
 5. npm install --save react-toastify
-6. npm i react-countup
+6. npm uninstall aos --save
+7. 
+8. npm install --save react-icons
+9. npm install react-hook-form

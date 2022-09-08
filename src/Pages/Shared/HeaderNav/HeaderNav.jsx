@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./HeaderNav.css";
 import { HashLink as Link } from "react-router-hash-link";
 import { NavLink } from "react-router-dom";
+import LoginModal from "../LoginModal/LoginModal";
+
 
 const HeaderNav = ({ children }) => {
   // for theme toggle
@@ -9,38 +11,34 @@ const HeaderNav = ({ children }) => {
   const menu = (
     <>
       <li className="mx-2">
-        <NavLink className="rounded" to="/">
+        <Link className="rounded" to="/" smooth>
           HOME
-        </NavLink>
+        </Link>
       </li>
       <li className="mx-2">
-        <NavLink className="rounded" to="/about">
-          ABOUT
-        </NavLink>
-      </li>
-      <li className="mx-2">
-        <NavLink className="rounded" to="/services">
+        <Link className="rounded" to="#services" smooth>
           SERVICE
-        </NavLink>
+        </Link>
+      </li>
+      <li className="mx-2">
+        <Link className="rounded" to="#portfolio" smooth>PORTFOLIO</Link>
       </li>
       {/* <li className="mx-2">
-        <NavLink className="rounded" to="#portfolio">PORTFOLIO</NavLink>
-      </li>
-      <li className="mx-2">
-        <NavLink className="rounded" to="#testimonial">TESTIMONIAL</NavLink>
+        <Link className="rounded" to="#testimonial" smooth>TESTIMONIAL</Link>
       </li> */}
       <li className="mx-2">
-        <NavLink className="rounded" to="/blogs">
+        <Link className="rounded" to="#blogs" smooth>
           BLOG
-        </NavLink>
+        </Link>
       </li>
       <li className="mx-2">
-        <NavLink className="rounded" to="/contact">
+        <Link className="rounded" to="#contact" smooth>
           CONTACT
-        </NavLink>
+        </Link>
       </li>
     </>
   );
+
 
   return (
     <>
@@ -52,7 +50,9 @@ const HeaderNav = ({ children }) => {
           <div className="sticky-nav">
             <div className="w-full navbar bg-accent  text-white lg:px-20">
               <div className="navbar-start">
-                <div className="flex-1 px-2 mx-2 text-xl font-bold">TRT.</div>
+                <div className="flex-1 px-2 mx-2 text-xl font-bold">
+                  <Link to="/">TRT.</Link>
+                </div>
               </div>
 
               <div className="flex-none hidden lg:block navbar-center">
@@ -84,7 +84,7 @@ const HeaderNav = ({ children }) => {
                 </div>
 
                 {/* swap */}
-                <div className=" hidden lg:block">
+                <div className=" hidden lg:block mr-4">
                   <label className="swap swap-rotate">
                     <input type="checkbox" onClick={() => setDark(!dark)} />
 
@@ -108,13 +108,14 @@ const HeaderNav = ({ children }) => {
 
                 {/* Login */}
                 <div className=" hidden lg:block ml-4">
-                  <div className=" px-2 mx-2  font-bold">LOGIN</div>
-                  {/* <label className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full">
-                  <img src="https://placeimg.com/80/80/people" />
-                </div>
-              </label> */}
-                </div>
+                    <div className=" px-2 mx-2  font-bold">
+                      <label htmlFor="login-modal" className="btn modal-button">
+                        Dashboard
+                      </label>
+                    </div>
+
+                    <LoginModal />
+                  </div>
               </div>
             </div>
           </div>

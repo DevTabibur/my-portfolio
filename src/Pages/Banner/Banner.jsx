@@ -12,9 +12,9 @@ import {
 const HeroBanner = () => {
   return (
     <>
-      <div className="hero py-10">
+      <div className="hero py-10" id="hero-banner">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="hero-portrait relative ">
+          <div  className="hero-portrait relative ">
             <div className="image">
               <img src={AboutImg} className="lg:max-w-md max-w-sm h-auto" alt="hero pic" />
               <div className="image-half-round-shape relative"></div>
@@ -43,7 +43,7 @@ const HeroBanner = () => {
               </div>
             </div>
           </div>
-          <div>
+          <div >
             <h1 className="text-5xl font-bold">Hello! I'm Tabibur Rahman</h1>
             <p className="py-6">
               Hi, I'm a dedicated and passionate MERN Developer. I'm a quick

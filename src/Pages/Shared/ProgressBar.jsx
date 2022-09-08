@@ -8,82 +8,82 @@ const ProgressComponent = () => {
           <h1 className="lg:text-9xl text-5xl font-semibold font-sans mb-8">
             My Special Skill <br></br> Field Here.
           </h1>
-          <button class="btn btn-accent">Get Resume</button>
+          <button className="btn btn-accent">Get Resume</button>
         </div>
 
         <div className="basis-1/2  p-5">
 
-          <div class="form-control">
-            <label class="label">
-              <span class="">HTML</span>
+          <div className="form-control">
+            <label className="label">
+              <span className="">HTML</span>
               <progress
-                class="progress progress-primary w-full ml-4"
+                className="progress progress-primary w-full ml-4"
                 value="98"
                 max="100"
               ></progress>
             </label>
           </div>
 
-          <div class="form-control">
-            <label class="label">
-              <span class="">CSS</span>
+          <div className="form-control">
+            <label className="label">
+              <span className="">CSS</span>
               <progress
-                class="progress progress-primary w-full ml-4"
+                className="progress progress-primary w-full ml-4"
                 value="96"
                 max="100"
               ></progress>
             </label>
           </div>
 
-          <div class="form-control">
-            <label class="label">
-              <span class="">JS</span>
+          <div className="form-control">
+            <label className="label">
+              <span className="">JS</span>
               <progress
-                class="progress progress-primary w-full ml-4"
+                className="progress progress-primary w-full ml-4"
                 value="70"
                 max="100"
               ></progress>
             </label>
           </div>
 
-          <div class="form-control">
-            <label class="label">
-              <span class="">REACT</span>
+          <div className="form-control">
+            <label className="label">
+              <span className="">REACT</span>
               <progress
-                class="progress progress-primary w-full ml-4"
+                className="progress progress-primary w-full ml-4"
                 value="89"
                 max="100"
               ></progress>
             </label>
           </div>
 
-          <div class="form-control">
-            <label class="label">
-              <span class="">MongoDB</span>
+          <div className="form-control">
+            <label className="label">
+              <span className="">MongoDB</span>
               <progress
-                class="progress progress-primary w-full ml-4"
+                className="progress progress-primary w-full ml-4"
                 value="98"
                 max="100"
               ></progress>
             </label>
           </div>
 
-          <div class="form-control">
-            <label class="label">
-              <span class="">Express.js</span>
+          <div className="form-control">
+            <label className="label">
+              <span className="">Express.js</span>
               <progress
-                class="progress progress-primary w-full ml-4"
+                className="progress progress-primary w-full ml-4"
                 value="60"
                 max="100"
               ></progress>
             </label>
           </div>
 
-          <div class="form-control">
-            <label class="label">
-              <span class="">Node.js</span>
+          <div className="form-control">
+            <label className="label">
+              <span className="">Node.js</span>
               <progress
-                class="progress progress-primary w-full ml-4"
+                className="progress progress-primary w-full ml-4"
                 value="50"
                 max="100"
               ></progress>

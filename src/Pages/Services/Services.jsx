@@ -8,7 +8,7 @@ import ProgressComponent from "../Shared/ProgressBar";
 const Services = () => {
   
   return (
-    <div className="services" id="services">
+    <div  className="services" id="services">
       <div className="container mx-auto px-4">
         <div className="section-title mx-auto text-center py-10">
           <h2 className="text-2xl font-bold mb-3 font-serif">

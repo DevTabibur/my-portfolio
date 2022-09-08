@@ -1,50 +1,13 @@
 [
   {
-    "id": 1,
-    "author": "The Lazy Artist Gallery",
-    "tag": "People",
-    "src": "https://github.com/OlgaKoplik/CodePen/blob/master/filterGallery/1.jpg?raw=true"
-  },
-  {
-    "id": 2,
-    "author": "Daria Shevtsova",
-    "tag": "Food",
-    "src": "https://github.com/OlgaKoplik/CodePen/blob/master/filterGallery/2.jpg?raw=true"
-  },
-  {
-    "id": 3,
-    "author": "Kasuma",
-    "tag": "Animals",
-    "src": "https://github.com/OlgaKoplik/CodePen/blob/master/filterGallery/3.jpg?raw=true"
-  },
-  {
-    "id": 4,
-    "author": "Dominika Roseclay",
-    "tag": "Plants",
-    "src": "https://github.com/OlgaKoplik/CodePen/blob/master/filterGallery/4.jpg?raw=true"
-  },
-  {
-    "id": 5,
-    "author": "Scott Webb",
-    "tag": "Plants",
-    "src": "https://github.com/OlgaKoplik/CodePen/blob/master/filterGallery/5.jpg?raw=true"
-  },
-  {
-    "id": 6,
-    "author": "Jeffrey Czum",
-    "tag": "People",
-    "src": "https://github.com/OlgaKoplik/CodePen/blob/master/filterGallery/6.jpg?raw=true"
-  },
-  {
-    "id": 7,
-    "author": "Dominika Roseclay",
-    "tag": "Food",
-    "src": "https://github.com/OlgaKoplik/CodePen/blob/master/filterGallery/7.jpg?raw=true"
-  },
-  {
-    "id": 8,
-    "author": "Valeria Boltneva",
-    "tag": "Animals",
-    "src": "https://github.com/OlgaKoplik/CodePen/blob/master/filterGallery/8.jpg?raw=true"
+    "projectName": "Incubator App",
+    "tag": "App",
+    "src": "https://github.com/OlgaKoplik/CodePen/blob/master/filterGallery/1.jpg?raw=true",
+    "LiveSite": "https://incubator-app.web.app/",
+    "FrontEndCode": "https://github.com/DevTabibur/incubator-app-client",
+    "BackendCode" : "https://github.com/DevTabibur/incubator-server-side",
+    "shortDescription": "To build this site I'm using React, Node, Bootstrap , MongoDB and many more. This is my first full-stack website that i've ever made in my life.There is RequireAuth functionality installed and worked. Private Route and Server API are using here.",
+    "tools" : "React Icons,Google Font,React Spinner (npm),React Swiper (npm),React Hook Form,Modern Drawer (npm),React Query",
+    "technology" : "React,React Bootstrap,React Router,SASS,React,Toastify,Firebase,React Firebase hooks"
   }
 ]

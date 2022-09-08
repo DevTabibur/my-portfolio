@@ -2,12 +2,8 @@ import React, { Component } from "react";
 import { ReactDOM } from "react";
 import "./Portfolio.css";
 import { userNavigate } from "react-router-dom";
+import useProjects from "../../Hooks/useProjects";
 
-// const Portfolio = () => {
-//   return (
-//     <div>Portfolio</div>
-//   )
-// }
 
 const imgs = [
   {
@@ -52,6 +48,8 @@ const imgs = [
   },
 ];
 
+
+
 const filters = [
   { name: "People", status: false },
   { name: "Animals", status: false },
@@ -59,16 +57,22 @@ const filters = [
   { name: "Food", status: false },
 ];
 
+
+
 const Filters = ({ onClickAll, all, onClick, filters }) => (
   <form className="menu-form">
     <ul>
       <li onClick={onClickAll}>
-        <input type="checkbox" checked={all} />
+        <input type="checkbox" defaultChecked={all} />
         <label htmlFor="all">All</label>
       </li>
       {filters.map((filter, i) => (
         <li key={i} data-index={i} onClick={onClick}>
-          <input id={filter.name} type="checkbox" checked={filter.status} />
+          <input
+            id={filter.name}
+            type="checkbox"
+            defaultChecked={filter.status}
+          />
           <label htmlFor={filter.name}>{filter.name}</label>
         </li>
       ))}
@@ -76,24 +80,26 @@ const Filters = ({ onClickAll, all, onClick, filters }) => (
   </form>
 );
 
-const Cards = ({ imgs }) => (
-  <>
-    {imgs.map((img, i) => (
-      <div className="card w-full bg-accent shadow">
-        <figure className="rounded-lg">
-          <img className="" src={img.src} alt="Shoes" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">{img.author}</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
+const Cards = ({ imgs }) => {
+  return (
+    <>
+      {imgs.map((img, i) => (
+        <div key={i} className="card w-full bg-accent shadow">
+          <figure className="rounded-lg">
+            <img className="" src={img.src} alt="Shoes" />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">{img.author}</h2>
+            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <div className="card-actions justify-end">
+              <button className="btn btn-primary">Buy Now</button>
+            </div>
           </div>
         </div>
-      </div>
-    ))}
+      ))}
     </>
-);
+  );
+};
 
 class Portfolio extends Component {
   state = {
@@ -164,10 +170,12 @@ class Portfolio extends Component {
   render() {
     const { filters, all } = this.state;
     return (
-      <div>
-      <div className="container mx-auto px-4">
-        <h2 className="text-center py-6 text-2xl font-semibold pb-0">Project Show case</h2>
-      </div>
+      <div id="portfolio">
+        <div className="container mx-auto px-4">
+          <h2 className="text-center py-6 text-2xl font-semibold pb-0">
+            Project Show case
+          </h2>
+        </div>
         <Filters
           onClickAll={this.setAll}
           all={all}

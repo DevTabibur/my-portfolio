@@ -10,7 +10,6 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
-
 const Contact = () => {
   const form = useRef();
   const {
@@ -48,13 +47,12 @@ const Contact = () => {
     <>
       <ToastContainer />
       <div className="contact bg-base-100 py-12" id="contact">
-      <div className="title pb-20 py-8 text-center">
+        <div className="title pb-20 py-8 text-center">
           <h1 className="text-2xl font-semibold">Contact Me</h1>
         </div>
-        <div className="container mx-auto px-4">
-        
+        <div  className="container mx-auto px-4">
           <div className="md:flex gap-8">
-            <div className="left-col flex-1">
+            <div  className="left-col flex-1">
               <div className="google-map lg:pl-0 lg:px-12 ">
                 <iframe
                   className="w-full rounded-lg"
@@ -145,18 +143,24 @@ const Contact = () => {
                   <h2 className="text-2xl font-semibold">Follow Me</h2>
                   <div className="contact-social-link flex my-10">
                     <li className="list-none mx-2">
-                      <a href="https://www.facebook.com/profile.php?id=100006104477233" target="_blank">
+                      <a
+                        href="https://www.facebook.com/profile.php?id=100006104477233"
+                        target="_blank"
+                      >
                         <FontAwesomeIcon icon={faFacebook} border size="lg" />
                       </a>
                     </li>
                     <li className="list-none mx-2">
                       <a href="https://twitter.com/DevTabibur" target="_blank">
-                        <FontAwesomeIcon icon={faTwitter} border size="lg"/>
+                        <FontAwesomeIcon icon={faTwitter} border size="lg" />
                       </a>
                     </li>
                     <li className="list-none mx-2">
-                      <a href="https://www.linkedin.com/in/tabibur-rahman-a41a44205/" target="_blank">
-                        <FontAwesomeIcon icon={faLinkedin} border size="lg"/>
+                      <a
+                        href="https://www.linkedin.com/in/tabibur-rahman-a41a44205/"
+                        target="_blank"
+                      >
+                        <FontAwesomeIcon icon={faLinkedin} border size="lg" />
                       </a>
                     </li>
                   </div>
