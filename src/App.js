@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Routes, Route, Link } from "react-router-dom";
+import RequireAuth from "./authentication/RequireAuth";
 import Blog from "./Pages/Blog/Blog";
 import Details from "./Pages/Details/Details";
 import Home from "./Pages/Home/Home";
@@ -22,9 +23,11 @@ function App() {
             <Route key={index} path={path} element={<Component />} />
           ))}
 
-          {privateRoutes.map(({ path, Component }, index) => (
+          <Route path="/dashboard" element={<RequireAuth>
+            {privateRoutes.map(({ path, Component }, index) => (
             <Route key={index} path={path} element={<Component />} />
           ))}
+          </RequireAuth>}></Route>
 
           <Route path="*" element={<NotFound />}></Route>
         </Routes>

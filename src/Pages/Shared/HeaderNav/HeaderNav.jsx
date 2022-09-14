@@ -109,7 +109,7 @@ const HeaderNav = ({ children }) => {
                 {/* Login */}
                 <div className=" hidden lg:block ml-4">
                     <div className=" px-2 mx-2  font-bold">
-                      <label htmlFor="login-modal" className="btn modal-button">
+                      <label htmlFor="login-modal" className="btn btn-primary modal-button">
                         Dashboard
                       </label>
                     </div>

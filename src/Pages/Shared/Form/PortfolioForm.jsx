@@ -8,14 +8,29 @@ const PortfolioForm = () => {
     watch,
     formState: { errors },
   } = useForm();
+
   const onSubmit = async (data, e) => {
-    console.log(data);
+    // console.log(data);
+    const formData = new FormData();
+
+    formData.append("photo", data.photo[0]);
+
+    const url = `http://localhost:5000/upload-files`;
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("File media is uploaded", data);
+      });
   };
+
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* project name */}
-        <div className="form-control">
+        {/* <div className="form-control">
           <label className="label">
             <span className="label-text">Project Name*</span>
           </label>
@@ -37,11 +52,11 @@ const PortfolioForm = () => {
               </span>
             )}
           </label>
-        </div>
+        </div> */}
 
         {/* project tag */}
 
-        <div className="form-control">
+        {/* <div className="form-control">
         <label className="label">
             <span className="label-text">Select Tag*</span>
           </label>
@@ -58,10 +73,10 @@ const PortfolioForm = () => {
             <option value="Backend-end">Backend-end</option>
             <option value="React">React</option>
           </select>
-        </div>
+        </div> */}
 
         {/* Live site link */}
-        <div className="form-control">
+        {/* <div className="form-control">
           <label className="label">
             <span className="label-text">Live Site Link*</span>
           </label>
@@ -83,10 +98,10 @@ const PortfolioForm = () => {
               </span>
             )}
           </label>
-        </div>
+        </div> */}
 
         {/* Front-end code link */}
-        <div className="form-control">
+        {/* <div className="form-control">
           <label className="label">
             <span className="label-text">Front-end Code Link*</span>
           </label>
@@ -108,10 +123,10 @@ const PortfolioForm = () => {
               </span>
             )}
           </label>
-        </div>
+        </div> */}
 
         {/* Backend-end code link */}
-        <div className="form-control">
+        {/* <div className="form-control">
           <label className="label">
             <span className="label-text">Backend-end Code Link*</span>
           </label>
@@ -133,10 +148,10 @@ const PortfolioForm = () => {
               </span>
             )}
           </label>
-        </div>
+        </div> */}
 
         {/* tools */}
-        <div className="form-control">
+        {/* <div className="form-control">
           <label className="label">
             <span className="label-text">Write Used Tools*</span>
           </label>
@@ -158,10 +173,10 @@ const PortfolioForm = () => {
               </span>
             )}
           </label>
-        </div>
+        </div> */}
 
         {/* technology */}
-        <div className="form-control">
+        {/* <div className="form-control">
           <label className="label">
             <span className="label-text">Write Used Technology*</span>
           </label>
@@ -183,8 +198,7 @@ const PortfolioForm = () => {
               </span>
             )}
           </label>
-        </div>
-
+        </div> */}
 
         {/* project photo */}
         <div className="form-control">
@@ -212,7 +226,7 @@ const PortfolioForm = () => {
         </div>
 
         {/* description */}
-        <div className="form-control">
+        {/* <div className="form-control">
           <label className="label">
             <span className="label-text">Short Description*</span>
           </label>
@@ -234,7 +248,7 @@ const PortfolioForm = () => {
               </span>
             )}
           </label>
-        </div>
+        </div> */}
 
         <div className="form-control">
           <input
