@@ -5,13 +5,19 @@ import PortfolioForm from "../Shared/Form/PortfolioForm";
 import BlogForm from "../Shared/Form/BlogForm";
 import useProjects from "../../Hooks/useProjects";
 import src from "daisyui";
+import DashboardSideBar from "../Shared/DashboardSideBar/DashboardSideBar";
+import { Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   const [projects] = useProjects();
 
   return (
     <>
-      <div className="container mx-auto px-4 pb-12 pt-4">
+
+    <DashboardSideBar>
+      <Outlet/>
+    </DashboardSideBar>
+      {/* <div className="container mx-auto px-4 pb-12 pt-4">
         <h2 className="text-center py-6 text-3xl font-semibold text-primary">
           Welcome to Dashboard
         </h2>
@@ -33,7 +39,7 @@ const Dashboard = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

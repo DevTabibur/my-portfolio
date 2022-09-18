@@ -1,39 +1,54 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+// ES6 Modules or TypeScript
+import Swal from "sweetalert2";
+import RequireAdmin from "../../../authentication/RequireAdmin";
+import useAdmin from "../../../Hooks/useAdmin";
 
 const LoginModal = () => {
   const navigate = useNavigate();
+  // const [admin, setAdmin] = useState(false);
+  const [admin, setAdmin] = useAdmin();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-
-  const [loginInfo, setLoginInfo] = useState([]);
+ 
   const onSubmit = async (data, e) => {
-    setLoginInfo(data);
     const url = `http://localhost:5000/user`;
     fetch(url, {
-      method: "POST",
+      method: "GET",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((data) => {
-        // console.log("inside data", data);
-        if (data.code === 400) {
-          alert("Password is incorrect");
-        } else {
-          // setGetUser(true);
+      .then((fetchData) => {
+        const getPassword = fetchData[0]?.password;
+        const setPassword = data.password;
 
+        if (getPassword === setPassword) {
+          Swal.fire({
+            title: "Password is Matched!",
+            icon: "success",
+          });
+          // e.target.reset();
           navigate("/dashboard");
+        } else {
+          Swal.fire({
+            title: "Password is Incorrect!",
+            icon: "error",
+          });
+          // e.target.form.reset();
         }
       });
   };
 
+
+  
   return (
     <>
       {/* modal */}

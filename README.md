@@ -11,3 +11,4 @@
 6. npm uninstall aos --save
 7. npm install --save react-icons
 8. npm install react-hook-form
+9. npm install sweetalert2

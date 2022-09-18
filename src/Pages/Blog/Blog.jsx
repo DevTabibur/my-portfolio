@@ -38,6 +38,8 @@ export default Blog;
 
 const ShowBlog = ({blog}) => {
   // console.log('blog', blog)
+  
+  
   return (
     <div className="p-4 md:w-1/3">
       <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
@@ -54,7 +56,8 @@ const ShowBlog = ({blog}) => {
           {blog?.title}
           </h1>
           <p className="leading-relaxed mb-3">
-          {blog?.description}
+          {/* {blog?.description?.length < 400 ? blog?.description?.length : blog?.description?.slice(0, 400)} */}
+          {blog.blog}
           </p>
           <div className="flex items-center flex-wrap ">
             <Link to={`blogs/${blog?._id}`} className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
