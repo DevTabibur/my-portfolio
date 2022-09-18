@@ -6,7 +6,6 @@ const ManageBlogs = () => {
   const [blogs] = useBlogs();
 
   const handleDelete = (id) =>{
-    console.log('id', id)
 
     const url =`http://localhost:5000/blogs/${id}`
     fetch(url, {

@@ -45,7 +45,7 @@ const PostBlog = () => {
     <>
       <div className="container mx-auto px-4">
         <h2 className="text-center text-3xl font-bold font-serif text-primary">
-          WELCOME TO POSTING BLOGS
+          Welcome to posting blogs
         </h2>
 
         <div className="my-8 md:p-12 p-6 bg-white shadow-lg rounded-lg">
@@ -159,7 +159,7 @@ const PostBlog = () => {
                 </div>{" "}
               </div>
 
-              {/* title */}
+              {/* appName */}
               <div>
                 <div className="form-control">
                   <label
@@ -301,7 +301,7 @@ const PostBlog = () => {
             <input
               type="submit"
               value="POST ARTICLE"
-              className="w-full mt-8 text-primary bg-base-100 p-4 rounded-lg font-bold text-xl font-mono"
+              className="btn btn-accent w-full mt-8 text-primary font-bold text-xl font-mono"
             />
           </form>
         </div>
