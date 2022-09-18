@@ -36,7 +36,6 @@ const PostBlog = () => {
         Swal.fire({
           title: `ARTICLE DIDN'T PUBLISH`,
           icon: 'error',
-          confirmButtonText: 'Cool'
         })
       }
     })

@@ -10,7 +10,7 @@ const useBlogs = () => {
         // console.log('inside hooks', data)
         setBlogs(data);
       });
-  }, []);
+  }, [blogs]);
   return [blogs];
 };
 
