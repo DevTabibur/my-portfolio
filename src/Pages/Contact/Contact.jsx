@@ -46,13 +46,13 @@ const Contact = () => {
   return (
     <>
       <ToastContainer />
-      <div className="contact bg-base-100 py-12" id="contact">
-        <div className="title pb-20 py-8 text-center">
+      <div className="contact bg-base-100 pt-4 pb-2" id="contact">
+        <div className="title pb-10 text-center">
           <h1 className="text-2xl font-semibold">Contact Me</h1>
         </div>
-        <div  className="container mx-auto px-4">
-          <div className="md:flex gap-8">
-            <div  className="left-col flex-1">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
               <div className="google-map lg:pl-0 lg:px-12 ">
                 <iframe
                   className="w-full rounded-lg"
@@ -63,9 +63,11 @@ const Contact = () => {
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
-              <div className="md:flex flex-row gap-5 w-full mt-10">
-                <div className="bg-accent basis-1/2 p-8 rounded-lg">
-                  <h2 className="text-2xl font-semibold">Contact Info</h2>
+
+              <div className="grid md:grid-cols-2 gap-2 w-full mt-20">
+
+                <div className="bg-accent p-8 w-full relative rounded-lg">
+                  <h2 className="md:text-2xl text-xl font-semibold">Contact Info</h2>
 
                   <ul className="">
                     <li className="flex my-3">
@@ -139,7 +141,7 @@ const Contact = () => {
                   </ul>
                 </div>
 
-                <div className="bg-accent basis-1/2 rounded-lg p-8 lg:mt-0 mt-4">
+                <div className="bg-accent w-full rounded-lg p-8 lg:mt-0 ">
                   <h2 className="text-2xl font-semibold">Follow Me</h2>
                   <div className="contact-social-link flex my-10">
                     <li className="list-none mx-2">
@@ -165,10 +167,11 @@ const Contact = () => {
                     </li>
                   </div>
                 </div>
+
               </div>
             </div>
 
-            <div className="right-col flex-1">
+            <div className="right-col">
               <form
                 ref={form}
                 onSubmit={handleSubmit(onSubmit)}

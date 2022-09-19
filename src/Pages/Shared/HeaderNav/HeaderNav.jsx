@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "./HeaderNav.css";
 import { HashLink as Link } from "react-router-hash-link";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import LoginModal from "../LoginModal/LoginModal";
 
-
 const HeaderNav = ({ children }) => {
+  // const pathName = window.location.href;
+  // const pathDashboard = pathName === "/dashboard";
+  // console.log(pathName, pathDashboard)
   // for theme toggle
   const [dark, setDark] = useState(false);
   const menu = (
@@ -21,10 +23,14 @@ const HeaderNav = ({ children }) => {
         </Link>
       </li>
       <li className="mx-1">
-        <Link className="rounded" to="#portfolio" smooth>PORTFOLIO</Link>
+        <Link className="rounded" to="#portfolio" smooth>
+          PORTFOLIO
+        </Link>
       </li>
       <li className="mx-1">
-        <Link className="rounded" to="/dashboard" smooth>DASHBOARD</Link>
+        <Link className="rounded" to="/dashboard" smooth>
+          DASHBOARD
+        </Link>
       </li>
       <li className="mx-1">
         <Link className="rounded" to="#blogs" smooth>
@@ -39,7 +45,6 @@ const HeaderNav = ({ children }) => {
     </>
   );
 
-
   return (
     <>
       <div className="drawer drawer-end" data-theme={dark ? "dark" : "light"}>
@@ -50,7 +55,7 @@ const HeaderNav = ({ children }) => {
           <div className="sticky-nav">
             <div className="w-full navbar bg-accent text-white lg:px-20 relative">
               <div className="navbar-start">
-              <div className="flex-none lg:hidden">
+                <div className="flex-none lg:hidden">
                   <label
                     htmlFor="my-drawer-2"
                     className="btn btn-square btn-ghost"
@@ -70,6 +75,7 @@ const HeaderNav = ({ children }) => {
                     </svg>
                   </label>
                 </div>
+
                 <div className="flex-1 px-2 mx-2 text-xl font-bold">
                   <Link to="/">TRT.</Link>
                 </div>
@@ -128,14 +134,17 @@ const HeaderNav = ({ children }) => {
 
                 {/* Login */}
                 <div className=" hidden lg:block ml-4">
-                    <div className=" md:px-2 md:mx-2  font-bold">
-                      <label htmlFor="login-modal" className="btn btn-primary modal-button">
-                        Dashboard
-                      </label>
-                    </div>
-
-                    <LoginModal />
+                  <div className=" md:px-2 md:mx-2  font-bold">
+                    <label
+                      htmlFor="login-modal"
+                      className="btn btn-primary modal-button"
+                    >
+                      Dashboard
+                    </label>
                   </div>
+
+                  <LoginModal />
+                </div>
               </div>
             </div>
           </div>
@@ -170,15 +179,6 @@ const HeaderNav = ({ children }) => {
                 </svg>
               </label>
             </li>
-
-            {/* Login */}
-            <div className="dropdown dropdown-end">
-              <label className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full">
-                  <img src="https://placeimg.com/80/80/people" />
-                </div>
-              </label>
-            </div>
           </ul>
         </div>
       </div>
