@@ -8,7 +8,7 @@ const Blog = () => {
   // console.log('blogs component', blogs)
   return (
     <>
-      <div className="text-gray-600 body-font">
+      <div className="text-gray-600 body-font mb-8">
         <div className="container px-5 mx-auto">
           <h2 className="text-center py-6 text-3xl font-bold font-serif text-primary">
             Read Blogs ( {blogs.length} )

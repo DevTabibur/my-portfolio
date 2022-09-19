@@ -12,3 +12,4 @@
 7. npm install --save react-icons
 8. npm install react-hook-form
 9. npm install sweetalert2
+10. npm install firebase

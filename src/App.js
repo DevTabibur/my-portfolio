@@ -16,10 +16,6 @@ import HeaderNav from "./Pages/Shared/HeaderNav/HeaderNav";
 import privateRoutes from "./routes/privateRoutes";
 import publicRoutes from "./routes/publicRoutes";
 
-// demo 1 http://john.wethemez.com/Home6
-// demo 2 http://john.wethemez.com/Home-frelencer
-// main demo https://preview.themeforest.net/item/lendex-personal-portfolio-bootstrap-5-template/full_screen_preview/31542002?_ga=2.264054789.880580461.1661966293-1240890369.1657795515
-
 function App() {
   return (
     <>
@@ -49,9 +45,10 @@ function App() {
             </Route>
           </Route>
         </Routes>
-
         <Footer />
       </HeaderNav>
+
+      
     </>
   );
 }

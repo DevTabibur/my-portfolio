@@ -2,7 +2,7 @@ import React from "react";
 
 const ProgressComponent = () => {
   return (
-    <div className="py-20">
+    <div className="py-10">
       <div className="md:flex flex-row py-10">
         <div className="basis-1/2">
           <h1 className="lg:text-9xl text-5xl font-semibold font-sans mb-8">
