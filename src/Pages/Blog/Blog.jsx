@@ -8,60 +8,51 @@ const Blog = () => {
   // console.log('blogs component', blogs)
   return (
     <>
-      {/* <div id="blog">
-    //   <div className="container mx-auto py-60">
-    //     <h2 className="text-3xl mx-auto text-center">Coming Soon!</h2>
-
-    //     <div className="md:flex gap-6">
-    //       <div className="md:w-[60%] md:order-2 order-1">11</div>
-    //       <div className="md:w-[30%] md:order-1">22</div>
-    //       <div className="md:w-[30%] md:order-3">33</div>
-    //     </div>
-
-    //   </div>
-    // </div> */}
-
-      <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto">
+      <div className="text-gray-600 body-font">
+        <div className="container px-5 mx-auto">
+          <h2 className="text-center py-6 text-3xl font-bold font-serif text-primary">
+            Read Blogs ( {blogs.length} )
+          </h2>
           <div className="flex flex-wrap -m-4">
             {blogs.map((blog, idx) => (
               <ShowBlog key={idx} blog={blog} />
             ))}
           </div>
         </div>
-      </section>
+      </div>
     </>
   );
 };
 
 export default Blog;
 
-const ShowBlog = ({blog}) => {
-  // console.log('blog', blog)
-  
-  
+const ShowBlog = ({ blog }) => {
+ const {email, publishedAt, name, authorImg, blogTitle, category, blogImage, tags, content} = blog;
+
   return (
     <div className="p-4 md:w-1/3">
       <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
         <img
           className="lg:h-48 md:h-36 w-full object-cover object-center"
-          src={blog?.blogImage}
+          src={blogImage}
           alt="blog"
         />
         <div className="p-6">
           <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-            {blog?.category}
+            {category}
           </h2>
-          <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-          {blog?.title}
+          <h1 className="title-font text-lg font-medium text-primary mb-3">
+            {blogTitle}
           </h1>
-          <p className="leading-relaxed mb-3">
-          {/* {blog?.description?.length < 400 ? blog?.description?.length : blog?.description?.slice(0, 400)} */}
-          {blog.blog}
+          <p className="leading-relaxed mb-3 text-white">
+            {content && content?.slice(0, 200)}
           </p>
           <div className="flex items-center flex-wrap ">
-            <Link to={`blogs/${blog?._id}`} className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
-              Learn More
+            <Link
+              to={`blogs/${blog?._id}`}
+              className="btn btn-primary inline-flex items-center md:mb-2 lg:mb-0"
+            >
+              READ MORE
               <svg
                 className="w-4 h-4 ml-2"
                 viewBox="0 0 24 24"

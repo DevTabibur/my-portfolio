@@ -12,9 +12,7 @@ import {
 
 const SingleBlog = () => {
   const { id } = useParams();
-  console.log("single blog ID", id);
   const [singleBlog] = useSingleBlog(id);
-  console.log(singleBlog);
   return (
     <>
       <div className="container mx-auto px-4 pt-12">
@@ -30,10 +28,10 @@ const SingleBlog = () => {
           <div className="blog-info">
             <div className="blog-head">
               <h2 className="text-2xl text-primary font-bold text-left py-2">
-                {singleBlog?.title}
+                {singleBlog?.blogTitle}
               </h2>
               <p className="font-mono text-sm">
-                Written By: {singleBlog?.author}
+                Written By: {singleBlog?.name}
               </p>
               <p className="font-mono text-sm">
                 Category: {singleBlog?.category}
@@ -71,12 +69,10 @@ const SingleBlog = () => {
           </div>
 
           <div className="comment-form">
-          <h2 className="text-xl font-semibold font-serif  mb-4">Recent Comments</h2>
-            <form></form>
+            <p className="text-sm font-thin font-mono text-white  mb-4">
+              {singleBlog?.content}
+            </p>
           </div>
-
-
-
         </div>
       </div>
     </>

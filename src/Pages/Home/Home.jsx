@@ -12,13 +12,13 @@ import "./Home.css";
 const Home = () => {
   return (
     <>
-      {/* <HeroBanner />
-      <Services /> */}
+      <HeroBanner />
+      <Services />
       <Portfolio />
-      {/* <Blog/> */}
+      <Blog/>
 
-      {/* <Contact />
-      <Scroll /> */}
+      <Contact />
+      <Scroll />
     </>
   );
 };
