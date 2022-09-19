@@ -10,7 +10,7 @@ const useProjects = () => {
       .then((data) => {
         setProjects(data);
       });
-  }, []);
+  }, [projects]);
   return [projects]
 }
 

@@ -3,31 +3,32 @@ import useBlogs from "../../Hooks/useBlogs";
 // ES6 Modules or TypeScript
 import Swal from "sweetalert2";
 
-
 const ManageBlogs = () => {
   const [blogs] = useBlogs();
 
-
   const handleDelete = (id) => {
-    const url = `http://localhost:5000/blogs/${id}`;
-    fetch(url, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount) {
-          Swal.fire({
-            title: "ARTICLE DELETED SUCCESSFULLY",
-            icon: "success",
-          });
-        } else {
-          Swal.fire({
-            title: "ERROR!",
-            text: "Do you want to continue",
-            icon: "error",
-          });
-        }
-      });
+    const proceed = window.confirm("Are you wan to delete?");
+    if (proceed) {
+      const url = `http://localhost:5000/blogs/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount) {
+            Swal.fire({
+              title: "ARTICLE DELETED SUCCESSFULLY",
+              icon: "success",
+            });
+          } else {
+            Swal.fire({
+              title: "ERROR!",
+              text: "Do you want to continue",
+              icon: "error",
+            });
+          }
+        });
+    }
   };
   return (
     <>
@@ -75,7 +76,7 @@ const ShowBlog = ({ blog, handleDelete }) => {
           <div className="flex items-center flex-wrap ">
             <button
               onClick={() => handleDelete(blog?._id)}
-              className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"
+              className="btn btn-primary inline-flex items-center md:mb-2 lg:mb-0"
             >
               DELETE
               <svg
