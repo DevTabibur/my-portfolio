@@ -13,9 +13,9 @@ const Home = () => {
   return (
     <>
       {/* <HeroBanner />
-      <Services />
-      <Portfolio /> */}
-      <Blog/>
+      <Services /> */}
+      <Portfolio />
+      {/* <Blog/> */}
 
       {/* <Contact />
       <Scroll /> */}

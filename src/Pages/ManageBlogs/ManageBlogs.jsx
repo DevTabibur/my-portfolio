@@ -1,54 +1,56 @@
 import React from "react";
 import useBlogs from "../../Hooks/useBlogs";
 // ES6 Modules or TypeScript
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
+
+
 const ManageBlogs = () => {
   const [blogs] = useBlogs();
 
-  const handleDelete = (id) =>{
 
-    const url =`http://localhost:5000/blogs/${id}`
+  const handleDelete = (id) => {
+    const url = `http://localhost:5000/blogs/${id}`;
     fetch(url, {
-      method: 'DELETE'
+      method: "DELETE",
     })
-    .then(res => res.json())
-    .then(data =>{
-      if(data.deletedCount){
-        Swal.fire({
-          title: 'ARTICLE DELETED SUCCESSFULLY',
-          icon: 'success',
-        })
-      }
-      else{
-        Swal.fire({
-          title: 'ERROR!',
-          text: 'Do you want to continue',
-          icon: 'error',
-        })
-      }
-    })
-  }
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount) {
+          Swal.fire({
+            title: "ARTICLE DELETED SUCCESSFULLY",
+            icon: "success",
+          });
+        } else {
+          Swal.fire({
+            title: "ERROR!",
+            text: "Do you want to continue",
+            icon: "error",
+          });
+        }
+      });
+  };
   return (
     <>
-      <>
-        <div className="container mx-auto px-4">
-          <h2 className="text-center text-3xl font-bold font-serif text-primary mb-8">
-            MANAGE YOUR BLOGS
-          </h2>
-          <div className="flex flex-wrap -m-4">
-            {blogs.map((blog, idx) => (
-              <ShowBlog key={idx} blog={blog} handleDelete={handleDelete}/>
-            ))}
-          </div>
+      <div className="container mx-auto px-4">
+        <h2 className="text-center text-3xl font-bold font-serif text-primary mb-8">
+          Manage Your Blogs
+        </h2>
+        <p className="text-center text-xl font-bold font-serif text-primary mb-8">
+          You have {blogs.length} blogs.
+        </p>
+        <div className="flex flex-wrap -m-4">
+          {blogs.map((blog, idx) => (
+            <ShowBlog key={idx} blog={blog} handleDelete={handleDelete} />
+          ))}
         </div>
-      </>
+      </div>
     </>
   );
 };
 
 export default ManageBlogs;
 
-const ShowBlog = ({ blog , handleDelete}) => {
+const ShowBlog = ({ blog, handleDelete }) => {
   // console.log("blog", blog);
 
   return (
@@ -64,14 +66,17 @@ const ShowBlog = ({ blog , handleDelete}) => {
             {blog?.category}
           </h2>
           <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-          {blog?.title}
+            {blog?.title}
           </h1>
           <p className="leading-relaxed mb-3">
-          {/* {blog?.description?.length < 400 ? blog?.description?.length : blog?.description?.slice(0, 400)} */}
-          {blog.blog}
+            {/* {blog?.description?.length < 400 ? blog?.description?.length : blog?.description?.slice(0, 400)} */}
+            {blog.blog}
           </p>
           <div className="flex items-center flex-wrap ">
-            <button onClick={()=> handleDelete(blog?._id)} className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
+            <button
+              onClick={() => handleDelete(blog?._id)}
+              className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"
+            >
               DELETE
               <svg
                 className="w-4 h-4 ml-2"

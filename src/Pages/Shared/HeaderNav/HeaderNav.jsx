@@ -10,28 +10,28 @@ const HeaderNav = ({ children }) => {
   const [dark, setDark] = useState(false);
   const menu = (
     <>
-      <li className="mx-2">
+      {/* <li className="mx-1">
         <Link className="rounded" to="/" smooth>
           HOME
         </Link>
-      </li>
-      <li className="mx-2">
+      </li> */}
+      <li className="mx-1">
         <Link className="rounded" to="#services" smooth>
           SERVICE
         </Link>
       </li>
-      <li className="mx-2">
+      <li className="mx-1">
         <Link className="rounded" to="#portfolio" smooth>PORTFOLIO</Link>
       </li>
-      {/* <li className="mx-2">
-        <Link className="rounded" to="#testimonial" smooth>TESTIMONIAL</Link>
-      </li> */}
-      <li className="mx-2">
+      <li className="mx-1">
+        <Link className="rounded" to="/dashboard" smooth>DASHBOARD</Link>
+      </li>
+      <li className="mx-1">
         <Link className="rounded" to="#blogs" smooth>
           BLOG
         </Link>
       </li>
-      <li className="mx-2">
+      <li className="mx-1">
         <Link className="rounded" to="#contact" smooth>
           CONTACT
         </Link>
@@ -44,11 +44,11 @@ const HeaderNav = ({ children }) => {
     <>
       <div className="drawer drawer-end" data-theme={dark ? "dark" : "light"}>
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col">
+        <div className="drawer-content lg:flex flex-col">
           {/* <!-- Navbar --> */}
 
           <div className="sticky-nav">
-            <div className="w-full navbar bg-accent  text-white lg:px-20">
+            <div className="w-full navbar bg-accent text-white lg:px-20 relative">
               <div className="navbar-start">
               <div className="flex-none lg:hidden">
                   <label
@@ -128,7 +128,7 @@ const HeaderNav = ({ children }) => {
 
                 {/* Login */}
                 <div className=" hidden lg:block ml-4">
-                    <div className=" px-2 mx-2  font-bold">
+                    <div className=" md:px-2 md:mx-2  font-bold">
                       <label htmlFor="login-modal" className="btn btn-primary modal-button">
                         Dashboard
                       </label>
@@ -145,7 +145,7 @@ const HeaderNav = ({ children }) => {
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
-          <ul className="menu p-4 overflow-y-auto w-80 ">
+          <ul className="menu p-4 overflow-y-auto w-80 bg-accent">
             {/* <!-- Sidebar content here --> */}
             {menu}
             {/* swap */}

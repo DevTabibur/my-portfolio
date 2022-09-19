@@ -4,6 +4,7 @@ import Blog from '../Pages/Blog/Blog';
 import SingleBlog from '../Pages/Blog/SingleBlog';
 import Contact from '../Pages/Contact/Contact';
 import Home from '../Pages/Home/Home';
+import SinglePortfolio from '../Pages/Portfolio/SinglePortfolio';
 import Services from '../Pages/Services/Services';
 
 const publicRoutes = [
@@ -13,6 +14,7 @@ const publicRoutes = [
   {path:"#services", name:"Services", Component:Services},
   {path:"#blogs", name:"Blogs", Component:Blog},
   {path:"blogs/:id", name:"SingleBlog", Component:SingleBlog},
+  {path:"portfolio/:id", name:"SinglePortfolio", Component:SinglePortfolio},
 ]
 
 export default publicRoutes

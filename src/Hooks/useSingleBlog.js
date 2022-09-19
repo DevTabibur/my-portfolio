@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const useSingleBlog = (id) => {
-    console.log('id useSingle blog', id)
+    // console.log('id useSingle blog', id)
   const [singleBlog, setSingleBlog] = useState([]);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const useSingleBlog = (id) => {
         // console.log("inside single blog", data);
         setSingleBlog(data)
       });
-  }, []);
+  }, [singleBlog]);
 
   return [singleBlog];
 };

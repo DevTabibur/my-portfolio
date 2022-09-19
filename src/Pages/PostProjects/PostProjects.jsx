@@ -247,7 +247,7 @@ const PostProjects = () => {
                   </label>
                   <input
                     type="text"
-                    placeholder="Live Demo Link (imgbb Link)"
+                    placeholder="Live Demo Link (imgbb Link) with http:// or https://"
                     className="input input-bordered font-mono"
                     {...register("liveDemo", {
                       required: {
@@ -277,7 +277,7 @@ const PostProjects = () => {
                   </label>
                   <input
                     type="text"
-                    placeholder="Front-end Code Link (imgbb Link)"
+                    placeholder="Front-end Code Link (imgbb Link) with http:// or https://"
                     className="input input-bordered font-mono"
                     {...register("frontCode", {
                       required: {
@@ -307,7 +307,7 @@ const PostProjects = () => {
                   </label>
                   <input
                     type="text"
-                    placeholder="Backend-end Code Link (imgbb Link)"
+                    placeholder="Backend-end Code Link (imgbb Link) with  http:// or https://"
                     className="input input-bordered font-mono"
                     {...register("backendCode", {
                       required: {
