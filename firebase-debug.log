@@ -1,0 +1,132 @@
+[debug] [2022-09-19T14:11:46.873Z] ----------------------------------------------------------------------
+[debug] [2022-09-19T14:11:46.874Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Asus\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-09-19T14:11:46.875Z] CLI Version:   11.9.0
+[debug] [2022-09-19T14:11:46.875Z] Platform:      win32
+[debug] [2022-09-19T14:11:46.875Z] Node Version:  v16.13.2
+[debug] [2022-09-19T14:11:46.875Z] Time:          Mon Sep 19 2022 20:11:46 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-09-19T14:11:46.876Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-09-19T14:11:46.920Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-09-19T14:11:46.920Z] > authorizing via signed-in user (tobiburrohman2@gmail.com)
+[debug] [2022-09-19T14:11:46.920Z] [iam] checking project portfolio-189c5 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-09-19T14:11:46.923Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-189c5:testIamPermissions [none]
+[debug] [2022-09-19T14:11:46.923Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-189c5:testIamPermissions x-goog-quota-user=projects/portfolio-189c5
+[debug] [2022-09-19T14:11:46.923Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-189c5:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-09-19T14:11:48.660Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-189c5:testIamPermissions 200
+[debug] [2022-09-19T14:11:48.661Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-189c5:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-09-19T14:11:48.661Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-189c5 [none]
+[debug] [2022-09-19T14:11:50.480Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-189c5 200
+[debug] [2022-09-19T14:11:50.480Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-189c5 {"projectId":"portfolio-189c5","projectNumber":"475090814405","displayName":"portfolio","name":"projects/portfolio-189c5","resources":{"hostingSite":"portfolio-189c5"},"state":"ACTIVE","etag":"1_0998f07f-defb-4fbc-9ee7-8df96d534146"}
+[info] 
+[info] === Deploying to 'portfolio-189c5'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-09-19T14:11:50.483Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-189c5 [none]
+[debug] [2022-09-19T14:11:51.379Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-189c5 200
+[debug] [2022-09-19T14:11:51.379Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-189c5 {"projectId":"portfolio-189c5","projectNumber":"475090814405","displayName":"portfolio","name":"projects/portfolio-189c5","resources":{"hostingSite":"portfolio-189c5"},"state":"ACTIVE","etag":"1_0998f07f-defb-4fbc-9ee7-8df96d534146"}
+[debug] [2022-09-19T14:11:51.380Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/475090814405/sites/portfolio-189c5/versions [none]
+[debug] [2022-09-19T14:11:51.381Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/475090814405/sites/portfolio-189c5/versions {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-09-19T14:11:52.942Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/475090814405/sites/portfolio-189c5/versions 500
+[debug] [2022-09-19T14:11:52.942Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/475090814405/sites/portfolio-189c5/versions {"error":{"code":500,"message":"Internal error encountered.","status":"INTERNAL"}}
+[error] 
+[error] Error: HTTP Error: 500, Internal error encountered.
+[debug] [2022-09-19T14:11:53.172Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "Internal error encountered.",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500
+  }
+}
+[debug] [2022-09-19T14:12:48.768Z] ----------------------------------------------------------------------
+[debug] [2022-09-19T14:12:48.769Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Asus\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-09-19T14:12:48.770Z] CLI Version:   11.9.0
+[debug] [2022-09-19T14:12:48.770Z] Platform:      win32
+[debug] [2022-09-19T14:12:48.770Z] Node Version:  v16.13.2
+[debug] [2022-09-19T14:12:48.771Z] Time:          Mon Sep 19 2022 20:12:48 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-09-19T14:12:48.771Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-09-19T14:12:48.816Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-09-19T14:12:48.816Z] > authorizing via signed-in user (tobiburrohman2@gmail.com)
+[debug] [2022-09-19T14:12:48.816Z] [iam] checking project portfolio-189c5 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-09-19T14:12:48.818Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-189c5:testIamPermissions [none]
+[debug] [2022-09-19T14:12:48.818Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-189c5:testIamPermissions x-goog-quota-user=projects/portfolio-189c5
+[debug] [2022-09-19T14:12:48.818Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-189c5:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-09-19T14:12:50.524Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-189c5:testIamPermissions 200
+[debug] [2022-09-19T14:12:50.524Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-189c5:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-09-19T14:12:50.525Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-189c5 [none]
+[debug] [2022-09-19T14:12:51.515Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-189c5 200
+[debug] [2022-09-19T14:12:51.515Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-189c5 {"projectId":"portfolio-189c5","projectNumber":"475090814405","displayName":"portfolio","name":"projects/portfolio-189c5","resources":{"hostingSite":"portfolio-189c5"},"state":"ACTIVE","etag":"1_0998f07f-defb-4fbc-9ee7-8df96d534146"}
+[info] 
+[info] === Deploying to 'portfolio-189c5'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-09-19T14:12:51.517Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-189c5 [none]
+[debug] [2022-09-19T14:12:52.105Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-189c5 200
+[debug] [2022-09-19T14:12:52.105Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-189c5 {"projectId":"portfolio-189c5","projectNumber":"475090814405","displayName":"portfolio","name":"projects/portfolio-189c5","resources":{"hostingSite":"portfolio-189c5"},"state":"ACTIVE","etag":"1_0998f07f-defb-4fbc-9ee7-8df96d534146"}
+[debug] [2022-09-19T14:12:52.106Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/475090814405/sites/portfolio-189c5/versions [none]
+[debug] [2022-09-19T14:12:52.106Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/475090814405/sites/portfolio-189c5/versions {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-09-19T14:12:53.072Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/475090814405/sites/portfolio-189c5/versions 500
+[debug] [2022-09-19T14:12:53.072Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/475090814405/sites/portfolio-189c5/versions {"error":{"code":500,"message":"Internal error encountered.","status":"INTERNAL"}}
+[error] 
+[error] Error: HTTP Error: 500, Internal error encountered.
+[debug] [2022-09-19T14:12:53.317Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "Internal error encountered.",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500
+  }
+}
+[debug] [2022-09-19T14:16:15.335Z] ----------------------------------------------------------------------
+[debug] [2022-09-19T14:16:15.337Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Asus\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-09-19T14:16:15.337Z] CLI Version:   11.9.0
+[debug] [2022-09-19T14:16:15.337Z] Platform:      win32
+[debug] [2022-09-19T14:16:15.337Z] Node Version:  v16.13.2
+[debug] [2022-09-19T14:16:15.338Z] Time:          Mon Sep 19 2022 20:16:15 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-09-19T14:16:15.338Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-09-19T14:16:15.389Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-09-19T14:16:15.389Z] > authorizing via signed-in user (tobiburrohman2@gmail.com)
+[debug] [2022-09-19T14:16:15.390Z] [iam] checking project portfolio-189c5 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-09-19T14:16:15.391Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-189c5:testIamPermissions [none]
+[debug] [2022-09-19T14:16:15.392Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-189c5:testIamPermissions x-goog-quota-user=projects/portfolio-189c5
+[debug] [2022-09-19T14:16:15.392Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-189c5:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-09-19T14:16:16.993Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-189c5:testIamPermissions 200
+[debug] [2022-09-19T14:16:16.993Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/portfolio-189c5:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-09-19T14:16:16.994Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-189c5 [none]
+[debug] [2022-09-19T14:16:17.625Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-189c5 200
+[debug] [2022-09-19T14:16:17.626Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-189c5 {"projectId":"portfolio-189c5","projectNumber":"475090814405","displayName":"portfolio","name":"projects/portfolio-189c5","resources":{"hostingSite":"portfolio-189c5"},"state":"ACTIVE","etag":"1_0998f07f-defb-4fbc-9ee7-8df96d534146"}
+[info] 
+[info] === Deploying to 'portfolio-189c5'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-09-19T14:16:17.628Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-189c5 [none]
+[debug] [2022-09-19T14:16:18.212Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-189c5 200
+[debug] [2022-09-19T14:16:18.213Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/portfolio-189c5 {"projectId":"portfolio-189c5","projectNumber":"475090814405","displayName":"portfolio","name":"projects/portfolio-189c5","resources":{"hostingSite":"portfolio-189c5"},"state":"ACTIVE","etag":"1_0998f07f-defb-4fbc-9ee7-8df96d534146"}
+[debug] [2022-09-19T14:16:18.214Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/475090814405/sites/portfolio-189c5/versions [none]
+[debug] [2022-09-19T14:16:18.214Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/475090814405/sites/portfolio-189c5/versions {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2022-09-19T14:16:19.163Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/475090814405/sites/portfolio-189c5/versions 500
+[debug] [2022-09-19T14:16:19.163Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/475090814405/sites/portfolio-189c5/versions {"error":{"code":500,"message":"Internal error encountered.","status":"INTERNAL"}}
+[error] 
+[error] Error: HTTP Error: 500, Internal error encountered.
+[debug] [2022-09-19T14:16:19.543Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "Internal error encountered.",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500
+  }
+}
