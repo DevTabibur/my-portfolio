@@ -142,10 +142,10 @@ const PostProjects = () => {
                     </option>
                     <option value="ONE PAGE">ONE PAGE</option>
                     <option value="E-COMMERCE">E-COMMERCE</option>
-                    <option value="DESIGN">DESIGN</option>
+                    <option value="REACT">REACT</option>
                     <option value="TEAM WORK">TEAM WORK</option>
-                    <option value="BACKEND">BACKEND</option>
-                    <option value="FRONT-END">FRONT-END</option>
+                    <option value="FULL-STACK">FULL-STACK</option>
+                    <option value="CRUD">CRUD</option>
                     <option value="OTHER">OTHER</option>
                   </select>
                   <label className="label my-1 py-0">

@@ -58,10 +58,10 @@ const Portfolio = () => {
               E-COMMERCE
             </button>
             <button
-              onClick={() => handleFilterSelection("DESIGN")}
+              onClick={() => handleFilterSelection("REACT")}
               className="btn  btn-primary m-3 px-4 py-2 rounded-lg "
             >
-              DESIGN
+              REACT
             </button>
             <button
               onClick={() => handleFilterSelection("TEAM WORK")}
@@ -70,16 +70,16 @@ const Portfolio = () => {
               TEAM WORK
             </button>
             <button
-              onClick={() => handleFilterSelection("FRONT-END")}
+              onClick={() => handleFilterSelection("FULL-STACK")}
               className="btn  btn-primary m-3 px-4 py-2 rounded-lg "
             >
-              FRONT-END
+              FULL-STACK
             </button>
             <button
-              onClick={() => handleFilterSelection("BACKEND-END")}
+              onClick={() => handleFilterSelection("CRUD")}
               className="btn  btn-primary m-3 px-4 py-2 rounded-lg "
             >
-              BACKEND-END
+              CRUD
             </button>
             <button
               onClick={() => handleFilterSelection("OTHER")}
