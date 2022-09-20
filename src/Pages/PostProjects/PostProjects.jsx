@@ -137,7 +137,7 @@ const PostProjects = () => {
                       },
                     })}
                   >
-                    <option disabled selected>
+                    <option disabled defaultValue="Pick your favorite Simpson">
                       Pick your favorite Simpson
                     </option>
                     <option value="ONE-PAGE">ONE-PAGE</option>

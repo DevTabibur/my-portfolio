@@ -12,11 +12,11 @@ import "./Home.css";
 const Home = () => {
   return (
     <>
-      {/* <HeroBanner />
-      <Services /> */}
+      <HeroBanner />
+      <Services />
       <Portfolio />
-      {/* <Blog />
-      <Contact /> */}
+      <Blog />
+      <Contact />
     </>
   );
 };

@@ -13,21 +13,18 @@ const Portfolio = () => {
   let filterArray = [];
   const handleFilterSelection = (tag) => {
     const filterTag = tag;
-    console.log("filterTag", filterTag);
     setAllData(true);
     if (tag === "all") {
       setAllData(false);
     }
 
     filterArray = projects?.filter((item, idx) => {
-      // console.log("item", item);
       if (item.tags === filterTag) {
         return item;
       }
     });
     setFilterData(filterArray);
   };
-  // console.log(" outside", filterData);
 
   return (
     <>
@@ -136,43 +133,33 @@ const Cards = ({ fd }) => {
               {fd?.shortDescription && fd?.shortDescription.slice(0, 50)}...
             </p>
             <div className="flex items-center flex-wrap mt-6">
-            <div className="card-actions flex ">
-            <button className="btn btn-sm btn-primary">
-              <a href={fd?.liveDemo} target="_blank">
-                Live Demo
-              </a>
-            </button>
-            <button className="btn btn-sm btn-primary">
-              <a href={fd?.frontCode} target="_blank">
-                Client
-              </a>
-            </button>
-            <button className="btn btn-sm btn-primary">
-              <a href={fd?.backendCode} target="_blank">
-                Server
-              </a>
-            </button>
-            <button
-              onClick={() => hanldlePortfolioDetails(fd?._id)}
-              className="btn btn-sm btn-primary"
-            >
-              Details
-            </button>
-          </div>
+              <div className="card-actions flex ">
+                <button className="btn btn-sm btn-primary">
+                  <a href={fd?.liveDemo} target="_blank">
+                    Live Demo
+                  </a>
+                </button>
+                <button className="btn btn-sm btn-primary">
+                  <a href={fd?.frontCode} target="_blank">
+                    Client
+                  </a>
+                </button>
+                <button className="btn btn-sm btn-primary">
+                  <a href={fd?.backendCode} target="_blank">
+                    Server
+                  </a>
+                </button>
+                <button
+                  onClick={() => hanldlePortfolioDetails(fd?._id)}
+                  className="btn btn-sm btn-primary"
+                >
+                  Details
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      {/* <div className="card w-full bg-accent shadow transition duration-300 delay-150 hover:delay-300">
-        <figure className="rounded-lg w-full relative">
-          <img className="" src={fd?.projectImg1} alt="image" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">{fd?.appName}</h2>
-          <p>{fd?.shortDescription && fd?.shortDescription.slice(0, 50)}...</p>
-          
-        </div>
-      </div> */}
     </>
   );
 };

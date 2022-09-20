@@ -55,7 +55,7 @@ const ManageProjects = () => {
 export default ManageProjects;
 
 const ShowProject = ({ project, handleDelete }) => {
-  const { projectImg1, appName } = project;
+  const { projectImg1, appName , liveDemo, frontCode, backendCode} = project;
   return (
     <div className="p-4 md:w-1/3">
       <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
@@ -69,24 +69,29 @@ const ShowProject = ({ project, handleDelete }) => {
             {appName}
           </h1>
           <div className="flex items-center flex-wrap ">
-            <button
-              onClick={() => handleDelete(project?._id)}
-              className="btn btn-primary inline-flex items-center md:mb-2 lg:mb-0"
-            >
-              DELETE
-              <svg
-                className="w-4 h-4 ml-2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M5 12h14"></path>
-                <path d="M12 5l7 7-7 7"></path>
-              </svg>
-            </button>
+          <div className="card-actions flex ">
+                <button className="btn btn-sm btn-primary">
+                  <a href={liveDemo} target="_blank">
+                    Live Demo
+                  </a>
+                </button>
+                <button className="btn btn-sm btn-primary">
+                  <a href={frontCode} target="_blank">
+                    Client
+                  </a>
+                </button>
+                <button className="btn btn-sm btn-primary">
+                  <a href={backendCode} target="_blank">
+                    Server
+                  </a>
+                </button>
+                <button
+                  onClick={() => handleDelete(project?._id)}
+                  className="btn btn-sm btn-primary"
+                >
+                  Delete
+                </button>
+              </div>
           </div>
         </div>
       </div>
