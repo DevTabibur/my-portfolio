@@ -13,31 +13,30 @@ const PostProjects = () => {
   } = useForm();
 
   const onSubmit = async (data, e) => {
-    console.log(data)
+    // console.log(data)
     const url = `http://localhost:5000/projects`;
     fetch(url, {
-      method: 'POST',
-      headers:{
-        'content-type': 'application/json'
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     })
-    .then(res => res.json())
-    .then(data => {
-      if(data.acknowledged){
-        Swal.fire({
-          title: 'SUCCESSFUL!',
-          icon: 'success',
-        })
-        e.target.reset()
-      }
-      else{
-        Swal.fire({
-          title: `ERROR!`,
-          icon: 'error',
-        })
-      }
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          Swal.fire({
+            title: "SUCCESSFUL!",
+            icon: "success",
+          });
+          e.target.reset();
+        } else {
+          Swal.fire({
+            title: `ERROR!`,
+            icon: "error",
+          });
+        }
+      });
   };
 
   return (
@@ -130,6 +129,7 @@ const PostProjects = () => {
                   <select
                     type="text"
                     className="select select-bordered font-mono"
+                    placeholder="Add more and more tags"
                     {...register("tags", {
                       required: {
                         value: true,
@@ -137,10 +137,10 @@ const PostProjects = () => {
                       },
                     })}
                   >
-                    <option disabled defaultValue>
-                      Pick one
+                    <option disabled selected>
+                      Pick your favorite Simpson
                     </option>
-                    <option value="ONE PAGE">ONE PAGE</option>
+                    <option value="ONE-PAGE">ONE-PAGE</option>
                     <option value="E-COMMERCE">E-COMMERCE</option>
                     <option value="REACT">REACT</option>
                     <option value="TEAM WORK">TEAM WORK</option>
@@ -303,26 +303,14 @@ const PostProjects = () => {
                     htmlFor="first_name"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                   >
-                    Backend-end Code Link*
+                    Backend-end Code Link
                   </label>
                   <input
                     type="text"
                     placeholder="Backend-end Code Link (imgbb Link) with  http:// or https://"
                     className="input input-bordered font-mono"
-                    {...register("backendCode", {
-                      required: {
-                        value: true,
-                        message: "Backend-end Code Link is Required",
-                      },
-                    })}
+                    {...register("backendCode")}
                   />
-                  <label className="label my-1 py-0">
-                    {errors.backendCode?.type === "required" && (
-                      <span className="label-text-alt text-red-500">
-                        {errors.backendCode.message}
-                      </span>
-                    )}
-                  </label>
                 </div>{" "}
               </div>
             </div>

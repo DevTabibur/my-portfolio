@@ -99,7 +99,7 @@ const SinglePortfolio = () => {
           {technologies}
         </p>
 
-        <p className="text-white my-6 text-xl font-semibold">
+        <p className="text-white my-6 text-md ">
           {" "}
           <strong className="text-primary">About Project: </strong>{" "}
           {shortDescription}

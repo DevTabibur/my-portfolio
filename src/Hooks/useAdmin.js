@@ -9,14 +9,14 @@ const useAdmin = () => {
   //   fetch(url)
   //     .then((res) => res.json())
   //     .then((data) => {
-  //       // console.log('inside useAdmin hooks', data[0].role);
+  //       console.log('inside useAdmin hooks', data[0].role);
   //       if (data[0].role === "admin") {
   //         setAdmin(true);
   //         setAdminLoading(false);
   //         console.log("admin inside", admin);
   //       }
   //     });
-  // }, []);
+  // }, [admin]);
 
 
   return [admin];

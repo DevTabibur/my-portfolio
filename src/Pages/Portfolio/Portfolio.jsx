@@ -13,13 +13,15 @@ const Portfolio = () => {
   let filterArray = [];
   const handleFilterSelection = (tag) => {
     const filterTag = tag;
+    console.log("filterTag", filterTag);
     setAllData(true);
     if (tag === "all") {
       setAllData(false);
     }
 
     filterArray = projects?.filter((item, idx) => {
-      if (item.tag === filterTag) {
+      // console.log("item", item);
+      if (item.tags === filterTag) {
         return item;
       }
     });
@@ -29,7 +31,7 @@ const Portfolio = () => {
 
   return (
     <>
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-12" id="portfolio">
         <h2 className="text-center mx-auto pt-2 pb-8 text-2xl font-bold text-primary">
           Project ShowCase ( {projects.length} )
         </h2>
@@ -41,56 +43,55 @@ const Portfolio = () => {
           <ul className="">
             <button
               onClick={() => handleFilterSelection("all")}
-              className="btn btn-primary m-3 px-4 py-2 rounded-lg"
+              className="btn btn-sm btn-primary m-3 px-4 py-2 rounded-lg"
             >
               All
             </button>
             <button
               onClick={() => handleFilterSelection("ONE PAGE")}
-              className="btn  btn-primary m-3 px-4 py-2 rounded-lg"
+              className="btn btn-sm btn-primary m-3 px-4 py-2 rounded-lg"
             >
               ONE PAGE
             </button>
             <button
               onClick={() => handleFilterSelection("E-COMMERCE")}
-              className="btn  btn-primary m-3 px-4 py-2 rounded-lg "
+              className="btn btn-sm btn-primary m-3 px-4 py-2 rounded-lg "
             >
               E-COMMERCE
             </button>
             <button
               onClick={() => handleFilterSelection("REACT")}
-              className="btn  btn-primary m-3 px-4 py-2 rounded-lg "
+              className="btn btn-sm btn-primary m-3 px-4 py-2 rounded-lg "
             >
               REACT
             </button>
             <button
               onClick={() => handleFilterSelection("TEAM WORK")}
-              className="btn  btn-primary m-3 px-4 py-2 rounded-lg "
+              className="btn btn-sm btn-primary m-3 px-4 py-2 rounded-lg "
             >
               TEAM WORK
             </button>
             <button
               onClick={() => handleFilterSelection("FULL-STACK")}
-              className="btn  btn-primary m-3 px-4 py-2 rounded-lg "
+              className="btn btn-sm btn-primary m-3 px-4 py-2 rounded-lg "
             >
               FULL-STACK
             </button>
             <button
               onClick={() => handleFilterSelection("CRUD")}
-              className="btn  btn-primary m-3 px-4 py-2 rounded-lg "
+              className="btn btn-sm btn-primary m-3 px-4 py-2 rounded-lg "
             >
               CRUD
             </button>
             <button
               onClick={() => handleFilterSelection("OTHER")}
-              className="btn  btn-primary m-3 px-4 py-2 rounded-lg "
+              className="btn btn-sm btn-primary m-3 px-4 py-2 rounded-lg "
             >
               OTHER
             </button>
           </ul>
         </div>
-
-        <div className="grid md:grid-cols-4 gap-4 mt-12">
+        <div className="flex flex-wrap -m-4 mb-4">
           {allData ? (
             <>
               {filterData.map((fd, idx) => (
@@ -114,33 +115,64 @@ export default Portfolio;
 
 const Cards = ({ fd }) => {
   // console.log("item", fd);
-  console.log("item", fd?._id);
-  const navigate= useNavigate();
-  const hanldlePortfolioDetails = id => {
-    navigate(`/portfolio/${id}`)
-  }
+  const navigate = useNavigate();
+  const hanldlePortfolioDetails = (id) => {
+    navigate(`/portfolio/${id}`);
+  };
   return (
     <>
-      <div onClick={()=> hanldlePortfolioDetails(fd?._id)}  className="card w-full bg-accent shadow transition duration-300 delay-150 hover:delay-300">
-        <figure className="rounded-lg">
-          <img className="" src={fd?.projectImg1} alt="Shoes" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">{fd?.appName}</h2>
-          <p>{fd?.shortDescription}</p>
-          <div className="card-actions flex ">
-            <button  className="btn btn-primary">
-              <a href={fd?.liveDemo} target="_blank">Live Demo</a>
+      <div className="p-4 md:w-1/3 mt-8">
+        <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+          <img
+            className="lg:h-48 md:h-36 w-full object-cover object-center"
+            src={fd?.projectImg1}
+            alt="blog"
+          />
+          <div className="p-6">
+            <h1 className="title-font text-lg font-medium text-primary mb-3">
+              {fd?.appName}
+            </h1>
+            <p>
+              {fd?.shortDescription && fd?.shortDescription.slice(0, 50)}...
+            </p>
+            <div className="flex items-center flex-wrap mt-6">
+            <div className="card-actions flex ">
+            <button className="btn btn-sm btn-primary">
+              <a href={fd?.liveDemo} target="_blank">
+                Live Demo
+              </a>
             </button>
-            <button  className="btn btn-primary">
-              <a href={fd?.frontCode} target="_blank">Front-end Code</a>
+            <button className="btn btn-sm btn-primary">
+              <a href={fd?.frontCode} target="_blank">
+                Client
+              </a>
             </button>
-            <button  className="btn btn-primary">
-              <a href={fd?.backendCode} target="_blank">Backend-end Code</a>
+            <button className="btn btn-sm btn-primary">
+              <a href={fd?.backendCode} target="_blank">
+                Server
+              </a>
             </button>
+            <button
+              onClick={() => hanldlePortfolioDetails(fd?._id)}
+              className="btn btn-sm btn-primary"
+            >
+              Details
+            </button>
+          </div>
+            </div>
           </div>
         </div>
       </div>
+      {/* <div className="card w-full bg-accent shadow transition duration-300 delay-150 hover:delay-300">
+        <figure className="rounded-lg w-full relative">
+          <img className="" src={fd?.projectImg1} alt="image" />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">{fd?.appName}</h2>
+          <p>{fd?.shortDescription && fd?.shortDescription.slice(0, 50)}...</p>
+          
+        </div>
+      </div> */}
     </>
   );
 };

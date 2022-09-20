@@ -3,20 +3,15 @@ import "./HeaderNav.css";
 import { HashLink as Link } from "react-router-hash-link";
 import { NavLink, useLocation } from "react-router-dom";
 import LoginModal from "../LoginModal/LoginModal";
+import useAdmin from "../../../Hooks/useAdmin";
 
 const HeaderNav = ({ children }) => {
-  // const pathName = window.location.href;
-  // const pathDashboard = pathName === "/dashboard";
-  // console.log(pathName, pathDashboard)
+  const [admin] = useAdmin();
+  
   // for theme toggle
   const [dark, setDark] = useState(false);
   const menu = (
     <>
-      {/* <li className="mx-1">
-        <Link className="rounded" to="/" smooth>
-          HOME
-        </Link>
-      </li> */}
       <li className="mx-1">
         <Link className="rounded" to="#services" smooth>
           SERVICE
@@ -27,11 +22,11 @@ const HeaderNav = ({ children }) => {
           PORTFOLIO
         </Link>
       </li>
-      <li className="mx-1">
+      {admin && <li className="mx-1">
         <Link className="rounded" to="/dashboard" smooth>
           DASHBOARD
         </Link>
-      </li>
+      </li>}
       <li className="mx-1">
         <Link className="rounded" to="#blogs" smooth>
           BLOG
