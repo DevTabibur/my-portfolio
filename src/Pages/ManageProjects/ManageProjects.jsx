@@ -64,7 +64,7 @@ const ShowProject = ({ project, handleDelete }) => {
           src={projectImg1}
           alt="blog"
         />
-        <div className="p-6">
+        <div className="p-6 bg-accent">
           <h1 className="title-font text-lg font-medium text-primary mb-3">
             {appName}
           </h1>

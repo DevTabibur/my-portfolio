@@ -140,7 +140,7 @@ const PostProjects = () => {
                     <option disabled defaultValue="Pick your favorite Simpson">
                       Pick your favorite Simpson
                     </option>
-                    <option value="ONE-PAGE">ONE-PAGE</option>
+                    <option value="WORDPRESS">WORDPRESS</option>
                     <option value="E-COMMERCE">E-COMMERCE</option>
                     <option value="REACT">REACT</option>
                     <option value="TEAM WORK">TEAM WORK</option>

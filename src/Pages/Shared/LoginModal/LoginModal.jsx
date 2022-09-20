@@ -5,50 +5,60 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import RequireAdmin from "../../../authentication/RequireAdmin";
 import useAdmin from "../../../Hooks/useAdmin";
+import {
+  useCreateUserWithEmailAndPassword,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
+import auth from "../../../Firebase/firebase.init";
+import Loader from "../../Shared/Loader/Loader";
 
 const LoginModal = () => {
   const navigate = useNavigate();
   // const [admin, setAdmin] = useState(false);
-  const [admin, setAdmin] = useAdmin();
-
+  const [createUserWithEmailAndPassword, cUser, cLoading, cError] =
+    useCreateUserWithEmailAndPassword(auth);
+  const [signInWithEmailAndPassword, signInUser, signInLoading, signError] =
+    useSignInWithEmailAndPassword(auth);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
- 
-  const onSubmit = async (data, e) => {
-    const url = `http://localhost:5000/user`;
-    fetch(url, {
-      method: "GET",
-      headers: {
-        "content-type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((fetchData) => {
-        const getPassword = fetchData[0]?.password;
-        const setPassword = data.password;
 
-        if (getPassword === setPassword) {
-          Swal.fire({
-            title: "Password is Matched!",
-            icon: "success",
-          });
-          // e.target.reset();
-          navigate("/dashboard");
-        } else {
-          Swal.fire({
-            title: "Password is Incorrect!",
-            icon: "error",
-          });
-          // e.target.form.reset();
-        }
-      });
+  const [email, setEmail] = useState([]);
+  const onSubmit = async (data, e) => {
+    await signInWithEmailAndPassword(data.email, data.password);
+    setEmail(data.email);
   };
 
+  if (cUser) {
+    navigate("/dashboard");
+  }
 
-  
+  // const [token] = useToken(eUser || gUser);
+  // // if user logged-in then it'll take user the page what they want to see the page,
+  // let from = location.state?.from?.pathname || "/";
+  // useEffect(() => {
+  //   if (token) {
+  //     navigate(from, { replace: true });
+  //   }
+  // }, [token, from, navigate]);
+
+  // for loading
+  if (cLoading) {
+    return <Loader />;
+  }
+
+  // for error showing messages
+  let signInError;
+  if (cError) {
+    signInError = (
+      <small>
+        <p className="text-red-500">{cError?.message}</p>
+      </small>
+    );
+  }
+
   return (
     <>
       {/* modal */}
@@ -126,6 +136,7 @@ const LoginModal = () => {
                       {errors.password.message}
                     </span>
                   )}
+                  {signInError}
                 </label>
 
                 <div className="form-control mt-6">

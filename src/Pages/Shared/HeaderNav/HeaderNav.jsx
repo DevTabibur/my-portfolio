@@ -4,14 +4,26 @@ import { HashLink as Link } from "react-router-hash-link";
 import { NavLink, useLocation } from "react-router-dom";
 import LoginModal from "../LoginModal/LoginModal";
 import useAdmin from "../../../Hooks/useAdmin";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import auth from "../../../Firebase/firebase.init";
 
 const HeaderNav = ({ children }) => {
   const [admin] = useAdmin();
-  
+
+  const [user, loading, error] = useAuthState(auth);
+
   // for theme toggle
   const [dark, setDark] = useState(false);
   const menu = (
     <>
+      {user && (
+        <li className="mx-1">
+          <Link className="rounded" to="/dashboard" smooth>
+            DASHBOARD
+          </Link>
+        </li>
+      )}
       <li className="mx-1">
         <Link className="rounded" to="#services" smooth>
           SERVICE
@@ -22,11 +34,6 @@ const HeaderNav = ({ children }) => {
           PORTFOLIO
         </Link>
       </li>
-      {admin && <li className="mx-1">
-        <Link className="rounded" to="/dashboard" smooth>
-          DASHBOARD
-        </Link>
-      </li>}
       <li className="mx-1">
         <Link className="rounded" to="#blogs" smooth>
           BLOG
@@ -39,6 +46,11 @@ const HeaderNav = ({ children }) => {
       </li>
     </>
   );
+
+  const logOut = () => {
+    signOut(auth);
+    alert("Log Out Successfully!");
+  };
 
   return (
     <>
@@ -128,18 +140,31 @@ const HeaderNav = ({ children }) => {
                 </div>
 
                 {/* Login */}
-                <div className=" hidden lg:block ml-4">
-                  <div className=" md:px-2 md:mx-2  font-bold">
-                    <label
-                      htmlFor="login-modal"
-                      className="btn btn-primary modal-button"
-                    >
-                      Dashboard
-                    </label>
+                {user ? (
+                  <div className=" hidden lg:block ml-4">
+                    <div className=" md:px-2 md:mx-2  font-bold">
+                      <label
+                        onClick={logOut}
+                        className="btn btn-primary modal-button"
+                      >
+                        LOGOUT
+                      </label>
+                    </div>
                   </div>
+                ) : (
+                  <div className=" hidden lg:block ml-4">
+                    <div className=" md:px-2 md:mx-2  font-bold">
+                      <label
+                        htmlFor="login-modal"
+                        className="btn btn-primary modal-button"
+                      >
+                        LOGIN
+                      </label>
+                    </div>
 
-                  <LoginModal />
-                </div>
+                    <LoginModal />
+                  </div>
+                )}
               </div>
             </div>
           </div>

@@ -1,8 +1,9 @@
 import React from 'react'
 import Dashboard from '../Pages/Dashboard/Dashboard'
+import Loader from '../Pages/Shared/Loader/Loader'
 
 const privateRoutes = [
-    {path:"/dashboard", name:"Dashboard", Component:Dashboard},
+    {path:"/loader", name:"Loader", Component:Loader},
 ]
 
 export default privateRoutes

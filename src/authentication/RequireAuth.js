@@ -1,23 +1,29 @@
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
-// import { useAuthState } from 'react-firebase-hooks/auth';
-// // import auth from "../firebase/firebase.init";
-// import Loader from "../shared/Loader/Loader";
+import auth from "../Firebase/firebase.init";
+import Loader from "../Pages/Shared/Loader/Loader";
+
 
 const RequireAuth = () => {
+  const [user, loading, error] = useAuthState(auth);
   const location = useLocation();
-  const [user] = useState(false);
-  // const user = false;
+
+  // showing the
+  if (loading) {
+    return <Loader />;
+  }
 
   // it is necessary for rendering the element with loader
-//   if(loading){
-//     return <Loader/>
-//   }
+  //   if(loading){
+  //     return <Loader/>
+  //   }
 
   if (!user) {
     return <Navigate to="/" state={{ from: location }} replace />;
+  } else {
+    return <Outlet />;
   }
-  return <Outlet />;
 };
 
 export default RequireAuth;

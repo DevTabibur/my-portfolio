@@ -45,10 +45,10 @@ const Portfolio = () => {
               All
             </button>
             <button
-              onClick={() => handleFilterSelection("ONE PAGE")}
+              onClick={() => handleFilterSelection("WORDPRESS")}
               className="btn btn-sm btn-primary m-3 px-4 py-2 rounded-lg"
             >
-              ONE PAGE
+              WORDPRESS
             </button>
             <button
               onClick={() => handleFilterSelection("E-COMMERCE")}
@@ -125,7 +125,7 @@ const Cards = ({ fd }) => {
             src={fd?.projectImg1}
             alt="blog"
           />
-          <div className="p-6">
+          <div className="p-6 bg-accent">
             <h1 className="title-font text-lg font-medium text-primary mb-3">
               {fd?.appName}
             </h1>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const useAdmin = () => {
-  const [admin, setAdmin] = useState(true);
+  const [admin, setAdmin] = useState(false);
   const [adminLoading, setAdminLoading] = useState(true);
 
   // useEffect(() => {
@@ -9,17 +9,16 @@ const useAdmin = () => {
   //   fetch(url)
   //     .then((res) => res.json())
   //     .then((data) => {
-  //       console.log('inside useAdmin hooks', data[0].role);
   //       if (data[0].role === "admin") {
   //         setAdmin(true);
   //         setAdminLoading(false);
-  //         console.log("admin inside", admin);
+  //         console.log("admin in  side", admin);
   //       }
   //     });
   // }, [admin]);
 
 
-  return [admin];
+  return [admin, adminLoading];
 };
 
 export default useAdmin;

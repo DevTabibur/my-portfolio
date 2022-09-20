@@ -26,11 +26,11 @@ function App() {
           ))}
 
           {/* protected route */}
-          {/* <Route element={<RequireAuth/>}>
+          <Route element={<RequireAuth/>}>
             {privateRoutes.map(({ path, name, Component }, index) => (
               <Route key={index} path={path} element={<Component />} />
             ))}
-          </Route> */}
+          </Route>
 
           <Route path="*" element={<NotFound />}></Route>
 
@@ -47,8 +47,6 @@ function App() {
         </Routes>
         <Footer />
       </HeaderNav>
-
-      
     </>
   );
 }
