@@ -25,13 +25,6 @@ function App() {
             <Route key={index} path={path} element={<Component />} />
           ))}
 
-          {/* protected route */}
-          <Route element={<RequireAuth/>}>
-            {privateRoutes.map(({ path, name, Component }, index) => (
-              <Route key={index} path={path} element={<Component />} />
-            ))}
-          </Route>
-
           <Route path="*" element={<NotFound />}></Route>
 
           {/* Admin Route */}

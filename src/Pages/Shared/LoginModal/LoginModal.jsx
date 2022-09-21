@@ -31,30 +31,22 @@ const LoginModal = () => {
     setEmail(data.email);
   };
 
-  if (cUser) {
+  if (cUser || signInUser) {
     navigate("/dashboard");
   }
 
-  // const [token] = useToken(eUser || gUser);
-  // // if user logged-in then it'll take user the page what they want to see the page,
-  // let from = location.state?.from?.pathname || "/";
-  // useEffect(() => {
-  //   if (token) {
-  //     navigate(from, { replace: true });
-  //   }
-  // }, [token, from, navigate]);
 
   // for loading
-  if (cLoading) {
+  if (cLoading || signInLoading) {
     return <Loader />;
   }
 
   // for error showing messages
   let signInError;
-  if (cError) {
+  if (cError || signError) {
     signInError = (
       <small>
-        <p className="text-red-500">{cError?.message}</p>
+        <p className="text-red-500">{cError?.message || signError?.message}</p>
       </small>
     );
   }
