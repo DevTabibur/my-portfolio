@@ -10,7 +10,7 @@ const ManageProjects = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you want to delete?");
     if (proceed) {
-      const url = `http://localhost:5000/projects/${id}`;
+      const url = `https://portfolio-server-kh8j.onrender.com/projects/${id}`;
       fetch(url, {
         method: "DELETE",
       })

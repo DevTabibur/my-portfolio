@@ -14,7 +14,7 @@ import Loader from "../../Shared/Loader/Loader";
 
 const LoginModal = () => {
   const navigate = useNavigate();
-  // const [admin, setAdmin] = useState(false);
+
   const [createUserWithEmailAndPassword, cUser, cLoading, cError] =
     useCreateUserWithEmailAndPassword(auth);
   const [signInWithEmailAndPassword, signInUser, signInLoading, signError] =

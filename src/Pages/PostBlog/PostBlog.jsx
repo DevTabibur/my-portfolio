@@ -14,7 +14,7 @@ const PostBlog = () => {
 
   const onSubmit = async (data, e) => {
 
-    const url = `http://localhost:5000/blogs`;
+    const url = `https://portfolio-server-kh8j.onrender.com/blogs`;
     fetch(url, {
       method: 'POST',
       headers:{

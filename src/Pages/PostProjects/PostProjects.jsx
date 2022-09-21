@@ -14,7 +14,7 @@ const PostProjects = () => {
 
   const onSubmit = async (data, e) => {
     // console.log(data)
-    const url = `http://localhost:5000/projects`;
+    const url = `https://portfolio-server-kh8j.onrender.com/projects`;
     fetch(url, {
       method: "POST",
       headers: {

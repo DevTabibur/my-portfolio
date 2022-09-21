@@ -5,7 +5,7 @@ const useSingleBlog = (id) => {
   const [singleBlog, setSingleBlog] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:5000/blogs/${id}`;
+    const url = `https://portfolio-server-kh8j.onrender.com/blogs/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {

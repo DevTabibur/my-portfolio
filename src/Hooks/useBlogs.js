@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const useBlogs = () => {
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
-    const url = `http://localhost:5000/blogs`;
+    const url = `https://portfolio-server-kh8j.onrender.com/blogs`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {

@@ -5,7 +5,7 @@ const useAdmin = () => {
   const [adminLoading, setAdminLoading] = useState(true);
 
   // useEffect(() => {
-  //   const url = `http://localhost:5000/user`;
+  //   const url = `https://portfolio-server-kh8j.onrender.com/user`;
   //   fetch(url)
   //     .then((res) => res.json())
   //     .then((data) => {

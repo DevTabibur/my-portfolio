@@ -9,7 +9,7 @@ const ManageBlogs = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you wan to delete?");
     if (proceed) {
-      const url = `http://localhost:5000/blogs/${id}`;
+      const url = `https://portfolio-server-kh8j.onrender.com/blogs/${id}`;
       fetch(url, {
         method: "DELETE",
       })

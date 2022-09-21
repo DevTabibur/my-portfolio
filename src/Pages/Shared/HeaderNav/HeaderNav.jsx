@@ -49,7 +49,6 @@ const HeaderNav = ({ children }) => {
 
   const logOut = () => {
     signOut(auth);
-    alert("Log Out Successfully!");
   };
 
   return (

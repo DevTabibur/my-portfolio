@@ -13,7 +13,6 @@ const RequireAdmin = () => {
       return <Loader/>
     }
 
-    console.log('requireAdmin admin', admin)
 
     if(!user){
       return <Navigate to="/" state={{ from: location }} replace />;
