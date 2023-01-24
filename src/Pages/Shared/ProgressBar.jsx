@@ -11,7 +11,7 @@ const ProgressComponent = () => {
           <div className="download-btn">
             <a
               target="_blank"
-              href="https://drive.google.com/file/d/1Pih96b70P_Lfbfnb3GnZalmzlkIEBBA9/view?usp=sharing"
+              href="https://drive.google.com/file/d/1_Kt0_bYxTfazGULj7UBsKSg6y2xSVyKY/view?usp=sharing"
               class="btn btn-accent glow-on-hover"
               type="button"
             >
