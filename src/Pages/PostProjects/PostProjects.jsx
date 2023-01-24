@@ -13,37 +13,37 @@ const PostProjects = () => {
   } = useForm();
 
   const onSubmit = async (data, e) => {
-    // console.log(data)
+    console.log(data)
     const url = `https://portfolio-server-kh8j.onrender.com/projects`;
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.acknowledged) {
-          Swal.fire({
-            title: "SUCCESSFUL!",
-            icon: "success",
-          });
-          e.target.reset();
-        } else {
-          Swal.fire({
-            title: `ERROR!`,
-            icon: "error",
-          });
-        }
-      });
+    // fetch(url, {
+    //   method: "POST",
+    //   headers: {
+    //     "content-type": "application/json",
+    //   },
+    //   body: JSON.stringify(data),
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     if (data.acknowledged) {
+    //       Swal.fire({
+    //         title: "SUCCESSFUL!",
+    //         icon: "success",
+    //       });
+    //       e.target.reset();
+    //     } else {
+    //       Swal.fire({
+    //         title: `ERROR!`,
+    //         icon: "error",
+    //       });
+    //     }
+    //   });
   };
 
   return (
     <>
       <div className="container mx-auto px-4">
-        <h2 className="text-center text-3xl font-bold font-serif text-primary">
-          Welcome to posting projects
+        <h2 className="text-center text-3xl font-bold  text-primary">
+          Upload your projects
         </h2>
 
         <div className="my-8 md:p-12 p-6 bg-white shadow-lg rounded-lg">

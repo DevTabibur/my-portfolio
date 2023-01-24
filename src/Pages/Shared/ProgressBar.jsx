@@ -8,14 +8,16 @@ const ProgressComponent = () => {
           <h1 className="lg:text-9xl text-5xl font-semibold font-sans mb-8">
             My Special Skill <br></br> Field Here.
           </h1>
-          <button className="btn btn-accent">
+          <div className="download-btn">
             <a
               target="_blank"
               href="https://drive.google.com/file/d/1Pih96b70P_Lfbfnb3GnZalmzlkIEBBA9/view?usp=sharing"
+              class="btn btn-accent glow-on-hover"
+              type="button"
             >
               DOWNLOAD RESUME
             </a>
-          </button>
+          </div>
         </div>
 
         <div className="basis-1/2  p-5">

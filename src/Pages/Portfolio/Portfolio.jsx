@@ -30,7 +30,7 @@ const Portfolio = () => {
     <>
       <div className="container mx-auto px-4 py-12" id="portfolio">
         <h2 className="text-center mx-auto pt-2 pb-8 text-2xl font-bold text-primary">
-          Project ShowCase ( {projects.length} )
+          PROJECTS ( {projects.length} )
         </h2>
 
         <div
@@ -113,13 +113,13 @@ export default Portfolio;
 const Cards = ({ fd }) => {
   // console.log("item", fd);
   const navigate = useNavigate();
-  const hanldlePortfolioDetails = (id) => {
+  const handlePortfolioDetails = (id) => {
     navigate(`/portfolio/${id}`);
   };
   return (
     <>
       <div className="p-4 md:w-1/3 mt-8">
-        <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+        <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden  hover:shadow-2xl">
           <img
             className="lg:h-48 md:h-36 w-full object-cover object-center"
             src={fd?.projectImg1}
@@ -129,7 +129,7 @@ const Cards = ({ fd }) => {
             <h1 className="title-font text-lg font-medium text-primary mb-3">
               {fd?.appName}
             </h1>
-            <p>
+            <p className="text-white">
               {fd?.shortDescription && fd?.shortDescription.slice(0, 50)}...
             </p>
             <div className="flex items-center flex-wrap mt-6">
@@ -150,7 +150,7 @@ const Cards = ({ fd }) => {
                   </a>
                 </button>
                 <button
-                  onClick={() => hanldlePortfolioDetails(fd?._id)}
+                  onClick={() => handlePortfolioDetails(fd?._id)}
                   className="btn btn-sm btn-primary"
                 >
                   Details

@@ -14,9 +14,13 @@ const HeroBanner = () => {
     <>
       <div className="hero py-10" id="hero-banner">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div  className="hero-portrait relative ">
-            <div className="image">
-              <img src={AboutImg} className="lg:max-w-md max-w-sm h-auto" alt="hero pic" />
+          <div className="hero-portrait relative">
+            <div className="image box bounce-1">
+              <img
+                src={AboutImg}
+                className="lg:max-w-md max-w-sm h-auto"
+                alt="hero pic"
+              />
               <div className="image-half-round-shape relative"></div>
               <div className="image-social-link relative">
                 <li className="list-none mx-2">
@@ -43,7 +47,8 @@ const HeroBanner = () => {
               </div>
             </div>
           </div>
-          <div >
+
+          <div>
             <h1 className="text-5xl font-bold">Hello! I'm Tabibur Rahman</h1>
             <p className="py-6">
               Hi, I'm a dedicated and passionate MERN Developer. I'm a quick
@@ -52,12 +57,17 @@ const HeroBanner = () => {
               up my career as a Software Engineer. I want to see myself as a
               Senior MERN Developer in the next 5 years.
             </p>
-            <button className="btn btn-accent" ><a
+
+            <div className="download-btn">
+              <a
                 target="_blank"
                 href="https://drive.google.com/file/d/1Pih96b70P_Lfbfnb3GnZalmzlkIEBBA9/view?usp=sharing"
+                class="btn btn-accent glow-on-hover"
+                type="button"
               >
                 DOWNLOAD RESUME
-              </a></button>
+              </a>
+            </div>
           </div>
         </div>
       </div>

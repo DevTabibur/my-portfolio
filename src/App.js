@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import RequireAdmin from "./authentication/RequireAdmin";
 import RequireAuth from "./authentication/RequireAuth";
@@ -16,30 +16,45 @@ import HeaderNav from "./Pages/Shared/HeaderNav/HeaderNav";
 import privateRoutes from "./routes/privateRoutes";
 import publicRoutes from "./routes/publicRoutes";
 
+import Loader from "./Pages/Shared/Loader/Loader";
+
 function App() {
+  const [spinner, setSpinner] = useState(false);
+
+  useEffect(() => {
+    setSpinner(true);
+    setTimeout(() => {
+      setSpinner(false);
+    }, 3000);
+  }, []);
+
   return (
     <>
-      <HeaderNav>
-        <Routes>
-          {publicRoutes.map(({ path, Component }, index) => (
-            <Route key={index} path={path} element={<Component />} />
-          ))}
+      {spinner ? (
+        <Loader />
+      ) : (
+        <HeaderNav>
+          <Routes>
+            {publicRoutes.map(({ path, Component }, index) => (
+              <Route key={index} path={path} element={<Component />} />
+            ))}
 
-          <Route path="*" element={<NotFound />}></Route>
+            <Route path="*" element={<NotFound />}></Route>
 
-          {/* Admin Route */}
-          <Route element={<RequireAdmin />}>
-            <Route path="/dashboard" element={<Dashboard />}>
-              {/* nested route */}
-              <Route path="post-blogs" element={<PostBlog />} />
-              <Route path="post-projects" element={<PostProjects />} />
-              <Route path="manage-blogs" element={<ManageBlogs />} />
-              <Route path="manage-projects" element={<ManageProjects />} />
+            {/* Admin Route */}
+            <Route element={<RequireAdmin />}>
+              <Route path="/dashboard" element={<Dashboard />}>
+                {/* nested route */}
+                <Route path="post-blogs" element={<PostBlog />} />
+                <Route path="post-projects" element={<PostProjects />} />
+                <Route path="manage-blogs" element={<ManageBlogs />} />
+                <Route path="manage-projects" element={<ManageProjects />} />
+              </Route>
             </Route>
-          </Route>
-        </Routes>
-        <Footer />
-      </HeaderNav>
+          </Routes>
+          <Footer />
+        </HeaderNav>
+      )}
     </>
   );
 }

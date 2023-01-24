@@ -46,7 +46,7 @@ const Contact = () => {
   return (
     <>
       <ToastContainer />
-      <div className="contact bg-base-100 pt-4 pb-2" id="contact">
+      <div className="contact bg-base-100 py-4" id="contact">
         <div className="title pb-10 text-center">
           <h1 className="text-2xl font-semibold">Contact Me</h1>
         </div>
@@ -67,9 +67,9 @@ const Contact = () => {
               <div className="grid md:grid-cols-2 gap-2 w-full mt-20">
 
                 <div className="bg-accent p-8 w-full relative rounded-lg">
-                  <h2 className="md:text-2xl text-xl font-semibold">Contact Info</h2>
+                  <h2 className="md:text-2xl text-xl font-semibold text-primary">Contact Info</h2>
 
-                  <ul className="">
+                  <ul className="text-primary">
                     <li className="flex my-3">
                       <span>
                         <svg
@@ -133,7 +133,7 @@ const Contact = () => {
                           />
                         </svg>
                       </span>
-                      E-mail:{" "}
+                      Mail:{" "}
                       <a href="mailto:tobiburrohman2@gmail.com">
                         tobiburrohman2@gmail.com
                       </a>
@@ -142,7 +142,7 @@ const Contact = () => {
                 </div>
 
                 <div className="bg-accent w-full rounded-lg p-8 lg:mt-0 ">
-                  <h2 className="text-2xl font-semibold">Follow Me</h2>
+                  <h2 className="text-2xl font-semibold text-primary">Follow Me</h2>
                   <div className="contact-social-link flex my-10">
                     <li className="list-none mx-2">
                       <a

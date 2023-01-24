@@ -8,9 +8,9 @@ const Blog = () => {
   // console.log('blogs component', blogs)
   return (
     <>
-      <div className="text-gray-600 body-font mb-8" id="blogs">
+      <div className="text-gray-700 body-font my-8" id="blogs">
         <div className="container px-5 mx-auto">
-          <h2 className="text-center py-6 text-3xl font-bold font-serif text-primary">
+          <h2 className="text-center py-6 text-3xl font-bold  text-primary">
             Read Blogs ( {blogs.length} )
           </h2>
           <div className="flex flex-wrap -m-4">
@@ -44,7 +44,7 @@ const ShowBlog = ({ blog }) => {
           <h1 className="title-font text-lg font-medium text-primary mb-3">
             {blogTitle}
           </h1>
-          <p className="leading-relaxed mb-3 text-white">
+          <p className="leading-relaxed mb-3 text-primary">
             {content && content?.slice(0, 200)}
           </p>
           <div className="flex items-center flex-wrap ">

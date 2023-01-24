@@ -59,7 +59,7 @@ const HeaderNav = ({ children }) => {
           {/* <!-- Navbar --> */}
 
           <div className="sticky-nav">
-            <div className="w-full navbar bg-accent text-white lg:px-20 relative">
+            <div className="w-full navbar custom-color shadow-2xl text-white lg:px-20 relative">
               <div className="navbar-start">
                 <div className="flex-none lg:hidden">
                   <label
@@ -173,7 +173,7 @@ const HeaderNav = ({ children }) => {
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
-          <ul className="menu p-4 overflow-y-auto w-80 bg-accent">
+          <ul className="menu p-4 overflow-y-auto w-80 custom-color">
             {/* <!-- Sidebar content here --> */}
             {menu}
             {/* swap */}
