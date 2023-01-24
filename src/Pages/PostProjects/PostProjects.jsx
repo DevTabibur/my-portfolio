@@ -13,30 +13,29 @@ const PostProjects = () => {
   } = useForm();
 
   const onSubmit = async (data, e) => {
-    console.log(data)
     const url = `https://portfolio-server-kh8j.onrender.com/projects`;
-    // fetch(url, {
-    //   method: "POST",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify(data),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     if (data.acknowledged) {
-    //       Swal.fire({
-    //         title: "SUCCESSFUL!",
-    //         icon: "success",
-    //       });
-    //       e.target.reset();
-    //     } else {
-    //       Swal.fire({
-    //         title: `ERROR!`,
-    //         icon: "error",
-    //       });
-    //     }
-    //   });
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          Swal.fire({
+            title: "SUCCESSFUL!",
+            icon: "success",
+          });
+          e.target.reset();
+        } else {
+          Swal.fire({
+            title: `ERROR!`,
+            icon: "error",
+          });
+        }
+      });
   };
 
   return (
